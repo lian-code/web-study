@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 会议储存 -->
+    <!-- 页面关闭数据消失 -->
+    <input type="text">
+    <button class="set">储存数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class="cle">删除所有数据</button> `
+    <script>
+        var input = document.querySelector('input');
+        var set = document.querySelector('.set');
+        var get = document.querySelector('.get');
+        var remove = document.querySelector('.remove');
+        var cle = document.querySelector('.cle');
+        set.addEventListener('click', function() {
+            var val = input.value;
+            sessionStorage.setItem('uname', val);
+            sessionStorage.setItem('pdd', val);
+        });
+        get.addEventListener('click', function() {
+            console.log(sessionStorage.getItem('uname'));;
+        });
+        remove.addEventListener('click', function() {
+            sessionStorage.removeItem('uname');
+        });
+        cle.addEventListener('click', function() {
+            sessionStorage.clear();
+        });
+    </script>
+</body>
+f
+</html>

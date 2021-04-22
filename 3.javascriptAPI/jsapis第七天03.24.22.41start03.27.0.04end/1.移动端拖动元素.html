@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        // touchstart touchmove touchend
+        // 1.按住元素然后拖动，用touchstart然后touchmove;
+        // 2.按住元素时要获取位置，移动元素时要实时赋值元素位置。
+        // 3.移动多少长度就把多少长度添加给元素的left跟top
+        // 4.移动长度通过touchmove实时获取手指的pageXY,减去初始触摸屏幕的pageXY,得到移动的距离。
+
+        // 1.手指按住获取元素的offsetLeft Top值，获取手指的pageXY值、、
+        var startpageX;
+        var startpageY;
+        var startLeft;
+        var startTop;
+        div.addEventListener('touchstart', function(e) {
+            startpageX = e.targetTouches[0].pageX;
+            startpageY = e.targetTouches[0].pageY;
+            startLeft = this.offsetLeft;
+            startTop = this.offsetTop;
+        })
+
+        div.addEventListener('touchmove', function(e) {
+            var moveX = e.targetTouches[0].pageX - startpageX; //手指移动的X距离
+            var moveY = e.targetTouches[0].pageY - startpageY; //手指移动的Y距离
+            this.style.left = startLeft + moveX + 'px';
+            this.style.top = startTop + moveY + 'px';
+        })
+    </script>
+</body>
+
+</html>

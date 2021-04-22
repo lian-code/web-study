@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- localStorage -->
+    <!-- 储存到浏览器中，浏览器各个页面都可以用 -->
+    <input type="text">
+    <button class="set">储存</button>
+    <button class="get">得到</button>
+    <button class="remove">删除</button>
+    <button class="cle">全部清除</button>
+    <script>
+        var input = document.querySelector('input');
+        var set = document.querySelector('.set');
+        var get = document.querySelector('.get');
+        var remove = document.querySelector('.remove');
+        var cle = document.querySelector('.cle');
+        // 点击set按钮储存数据
+        set.addEventListener('click', function() {
+            var val = input.value;
+            localStorage.setItem('pddd', val);
+        });
+        // 点击get按钮得到数据
+        get.addEventListener('click', function() {
+            console.log(localStorage.getItem('pddd'));;
+        });
+        // 点击remove清除数据
+        remove.addEventListener('click', function() {
+            localStorage.removeItem('pddd');
+        });
+    </script>
+</body>
+
+</html>

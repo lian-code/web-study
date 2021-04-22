@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <input type="checkbox">
+    <script>
+        var text = document.querySelectorAll('input')[0];
+        var checkbox = document.querySelectorAll('input')[1];
+        if (localStorage.getItem('pddd')) {
+            text.value = localStorage.getItem('pddd');
+            checkbox.checked = true;
+        };
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                localStorage.setItem('pddd', text.value);
+            } else {
+                localStorage.removeItem('pddd');
+            };
+
+        });
+    </script>
+</body>
+
+</html>
