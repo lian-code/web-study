@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <!--CSS RESET-->
+    <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+    <!--演示页面样式，使用时可以不引用-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app" data-state="0">
+        <div class="ui-big-images">
+            <div class="ui-big-image" data-key="0">
+                <img src="https://picsum.photos/1200/1200/?image=1005" alt="" />
+            </div>
+            <div class="ui-big-image" data-key="1">
+                <img src="https://picsum.photos/1200/1200/?image=804" alt="" />
+            </div>
+            <div class="ui-big-image" data-key="2">
+                <img src="https://picsum.photos/1200/1200/?image=838" alt="" />
+            </div>
+            <div class="ui-big-image" data-key="3">
+                <img src="https://picsum.photos/1200/1200/?image=832" alt="" />
+            </div>
+            <div class="ui-big-image" data-key="4">
+                <img src="https://picsum.photos/1200/1200/?image=836" alt="" />
+            </div>
+            <div class="ui-big-image" data-key="5">
+                <img src="https://picsum.photos/1200/1200/?image=823" alt="" />
+            </div>
+        </div>
+        <div class="ui-thumbnails">
+            <div class="ui-thumbnail" tabindex="-1" data-key="0">
+                <img src="https://picsum.photos/1200/1200/?image=1005" alt="" />
+                <div class="ui-cuticle" data-flip-key="cuticle"></div>
+            </div>
+            <div class="ui-thumbnail" tabindex="-1" data-key="1">
+                <img src="https://picsum.photos/1200/1200/?image=804" alt="" />
+                <div class="ui-cuticle" data-flip-key="cuticle"></div>
+            </div>
+            <div class="ui-thumbnail" tabindex="-1" data-key="2">
+                <img src="https://picsum.photos/1200/1200/?image=838" alt="" />
+                <div class="ui-cuticle" data-flip-key="cuticle"></div>
+            </div>
+            <div class="ui-thumbnail" tabindex="-1" data-key="3">
+                <img src="https://picsum.photos/1200/1200/?image=832" alt="" />
+                <div class="ui-cuticle" data-flip-key="cuticle"></div>
+            </div>
+            <div class="ui-thumbnail" tabindex="-1" data-key="4">
+                <img src="https://picsum.photos/1200/1200/?image=836" alt="" />
+                <div class="ui-cuticle" data-flip-key="cuticle"></div>
+            </div>
+            <div class="ui-thumbnail" tabindex="-1" data-key="5">
+                <img src="https://picsum.photos/1200/1200/?image=823" alt="" />
+                <div class="ui-cuticle" data-flip-key="cuticle"></div>
+            </div>
+        </div>
+        <div class="ui-content">
+
+            <nav class="ui-nav">
+                <button id="prev" tabindex="-1" title="Previous">&lt;</button>
+                <button id="next" tabindex="-1" title="Next">&gt;</button>
+            </nav>
+
+            <div class="ui-articles">
+                <article class="ui-article" data-key="0">
+                    <h2 class="ui-heading">Stephen Shaw</h2>
+                    <p class="ui-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae cupiditate assumenda nemo delectus totam atque quas suscipit dicta.</p>
+                </article>
+                <article class="ui-article" data-key="1">
+                    <h2 class="ui-heading">David Khourshid</h2>
+                    <p class="ui-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod sapiente soluta iusto molestias ullam. </p>
+                </article>
+                <article class="ui-article" data-key="2">
+                    <h2 class="ui-heading">Coding Compadre</h2>
+                    <p class="ui-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                </article>
+                <article class="ui-article" data-key="3">
+                    <h2 class="ui-heading">Boolean Buddy</h2>
+                    <p class="ui-paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+                </article>
+                <article class="ui-article" data-key="4">
+                    <h2 class="ui-heading">Animation Amigo</h2>
+                    <p class="ui-paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias exercitationem voluptatibus</p>
+                </article>
+                <article class="ui-article" data-key="5">
+                    <h2 class="ui-heading">Keyframe Companion</h2>
+                    <p class="ui-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae soluta reprehenderit, ut doloribus corrupti</p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://unpkg.com/flipping@1.1.0/dist/flipping.web.js'></script>
+    <script>
+        console.clear();
+
+        const elPrevButton = document.querySelector('#prev');
+        const elNextButton = document.querySelector('#next');
+        const flipping = new Flipping();
+
+        const elImages = Array.from(document.querySelectorAll('.ui-big-image'));
+        const elThumbnails = Array.from(document.querySelectorAll('.ui-thumbnail'));
+
+        let state = {
+            photo: 0
+        };
+
+        function send(event) {
+            // read cuticle positions
+            flipping.read();
+
+            const elActives = document.querySelectorAll('[data-active]');
+
+            Array.from(elActives)
+                .forEach(el => el.removeAttribute('data-active'));
+
+            switch (event) {
+                case 'PREV':
+                    state.photo--;
+                    // Math.max(state.photo - 1, 0);
+                    break;
+                case 'NEXT':
+                    state.photo++;
+                    // Math.min(state.photo + 1, elImages.length - 1);
+                    break;
+                default:
+                    state.photo = +event;
+                    break;
+            }
+
+            var len = elImages.length;
+            // Loop Around
+            //state.photo = ( ( state.photo % len) + len ) % len;
+            state.photo = Math.max(0, Math.min(state.photo, len - 1));
+
+            Array.from(document.querySelectorAll(`[data-key="${state.photo}"]`))
+                .forEach(el => {
+                    el.setAttribute('data-active', true);
+                });
+
+            // execute the FLIP animation
+            flipping.flip();
+        }
+
+        elThumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                send(thumb.dataset.key);
+            });
+        });
+
+        elPrevButton.addEventListener('click', () => {
+            send('PREV');
+        });
+
+        elNextButton.addEventListener('click', () => {
+            send('NEXT');
+        });
+
+        send(0);
+    </script>
+</body>
+
+</html>
