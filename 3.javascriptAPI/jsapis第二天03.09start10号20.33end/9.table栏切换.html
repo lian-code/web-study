@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .div1 {
+            width: 800px;
+            height: 30px;
+        }
+        
+        .div1 li {
+            float: left;
+            width: 100px;
+            border: 1px solid red;
+        }
+        
+        .div2 {
+            width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <ul>
+            <li>商品介绍</li>
+            <li>规格与包装</li>
+            <li>售后保障</li>
+            <li>商品评价500</li>
+            <li>手机社区</li>
+        </ul>
+    </div>
+    <div class="div2">
+        <ul>
+            <li>商品介绍11111111</li>
+            <li>规格与包装222222</li>
+            <li>售后保障333333333</li>
+            <li>商品评价44444444444</li>
+            <li>手机社区55555555555</li>
+        </ul>
+    </div>
+    <script>
+        var li1s = document.querySelector('.div1').querySelectorAll('li');
+        console.log(li1s);
+        var li2s = document.querySelector('.div2').querySelectorAll('li');
+        console.log(li2s);
+        for (var i = 0; i < li1s.length; i++) {
+            li1s[i].setAttribute('index', i);
+            li1s[i].onclick = function() {
+                var li1Index = this.getAttribute('index');
+                for (var j = 0; j < li1s.length; j++) {
+                    li1s[j].style.backgroundColor = '';
+                    li2s[j].style.display = 'none' //隐藏所有.div2中的li;
+                }
+                this.style.backgroundColor = 'pink';
+                li2s[li1Index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

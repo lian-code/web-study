@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="password">
+        <p>请输入密码</p>
+    </div>
+    <script>
+        var input = document.querySelector('input');
+        var p = document.querySelector('p');
+        input.onblur = function() {
+            if (this.value.length < 6 || this.value.length > 12) {
+                p.innerHTML = "你输入的不是6-12位密码，请重新输入";
+            } else {
+                p.innerHTML = "你输入的是6-12位密码，点击下一步";
+
+            }
+        }
+    </script>
+</body>
+
+</html>

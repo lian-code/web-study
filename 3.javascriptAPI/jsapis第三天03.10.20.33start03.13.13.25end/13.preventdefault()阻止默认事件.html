@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://fanyi.baidu.com/translate?aldtype=16047&query=event&keyfrom=baidu&smartresult=dict&lang=auto2zh#en/zh/prevent%20default">百度翻译</a>
+    <script>
+        var a = document.querySelector('a');
+        // a.addEventListener('click', function(e) {
+        //     e.preventDefault();
+        //     alert('1');
+        // })
+
+
+        // a.onclick = function(e) {
+        //     return false;
+        //     alert('1')
+        // }
+
+        a.onclick = function(e) {
+            e.preventDefault();
+            alert('1')
+        }
+    </script>
+</body>
+
+</html>

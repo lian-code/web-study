@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .xiala {
+            width: 100px;
+            background-color: pink;
+        }
+        
+        p {
+            height: 50px;
+        }
+        
+        .spann {
+            height: 150px;
+            display: none;
+        }
+        
+        .spann span {
+            display: block;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="xiala">
+        <p>微博^</p>
+        <div class="spann">
+            <span>私信</span>
+            <span>评论</span>
+            <span>@我</span>
+        </div>
+    </div>
+    <script>
+        var p = document.querySelector('p');
+        var spann = document.querySelector('.spann');
+        // onmouseover是鼠标停留
+        p.onmouseover = function() {
+                spann.style.display = 'block';
+            }
+            // onmouseout是鼠标离开
+        p.onmouseout = function() {
+            spann.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

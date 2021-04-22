@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // e.stoppropagation()阻止事件冒泡
+        //非标椎兼容性e.cancelBubble = true;
+        var ul = document.querySelector('ul');
+        var lis = document.querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].addEventListener('click', function(e) {
+                alert('li');
+                // e.stoppropagation();
+                e.cancelBubble = true;
+            })
+        }
+        ul.addEventListener('click', function(e) {
+            alert('ul');
+        })
+        document.addEventListener('click', function(e) {
+            alert('document');
+        })
+    </script>
+</body>
+
+</html>

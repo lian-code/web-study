@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class='div11' index='hhh' iii='999'></div>
+    <script>
+        // getAttribute获取程序员自定义属性
+        // setAttribute设置程序员自定义属性
+        // removeAttribute 移除程序员自定义属性
+        var div = document.querySelector('div');
+        console.log(div.index); //undefined
+        console.log(div.getAttribute('index')); //hhh
+
+        div.iii = '666'; //无变化
+        div.setAttribute('iii', '666'); //更改了
+        div.className = 'div22'; //更改了
+        div.setAttribute('class', 'div33'); //更改了
+
+        div.removeAttribute('class'); //移除了
+        div.removeAttribute('iii'); //移除了
+    </script>
+</body>
+
+</html>

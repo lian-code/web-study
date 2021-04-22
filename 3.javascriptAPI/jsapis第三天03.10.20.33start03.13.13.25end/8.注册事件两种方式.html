@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <script>
+        var button = document.querySelector('button');
+        // 同一元素添加多个事件默认使用最后一个事件
+        button.onclick = function() {
+            alert('1');
+        }
+        button.onclick = function() {
+            alert('2');
+        }
+
+        // 同一个元素添加多个事件都会执行，事件不要带on;
+        button.addEventListener('click', function() {
+            alert('3');
+        })
+        button.addEventListener('click', function() {
+            alert('4')
+        })
+    </script>
+</body>
+
+</html>

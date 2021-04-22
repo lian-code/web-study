@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="button1">按钮</button>
+    <button class="button2">按钮</button>
+
+    <script>
+        // 注册事件1删除事件操作
+        var button1 = document.querySelector('.button1');
+        button1.onclick = function() {
+                alert('2');
+                button1.onclick = null;
+            }
+            // 注册事件2删除事件操作
+        var button2 = document.querySelector('.button2');
+        button2.addEventListener('click', fu);
+
+        function fu() {
+            alert('1');
+            button2.removeEventListener('click', fu);
+        }
+    </script>
+</body>
+
+</html>

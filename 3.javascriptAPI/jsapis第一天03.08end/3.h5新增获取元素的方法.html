@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ol>
+        <li class="lili1">11</li>
+        <li id="lili2">22</li>
+        <li class="lili1">33</li>
+        <li>44</li>
+        <li>55</li>
+    </ol>
+    <script>
+        // 类选择器 伪数组显示
+        var lili = document.getElementsByClassName('lili1');
+        console.log(lili);
+        // 选择器 整个元素显示
+        // 1.id选择器
+        var lilili1 = document.querySelector('#lili2');
+        console.log(lilili1);
+        // 2.属性选择器
+        var lilili2 = document.querySelector('li');
+        console.log(lilili2);
+        // 3.类选择器
+        var lilili3 = document.querySelector('.lili1')
+        console.log(lilili3);
+        // 全部选择器 伪数组形式显示
+        var lolo = document.querySelectorAll('.lili1');
+        console.log(lolo);
+    </script>
+</body>
+
+</html>

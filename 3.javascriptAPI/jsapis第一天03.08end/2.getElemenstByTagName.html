@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ol>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+        <li>55</li>
+    </ol>
+</body>
+<script>
+    var lili = document.getElementsByTagName('li');
+    console.log(lili);
+    console.log(lili[0]);
+    var olol = document.getElementsByTagName('ol');
+    console.log(olol);
+    var olli = olol[0].getElementsByTagName('li');
+    console.log(olli);
+    var htmll = document.getElementsByTagName('html');
+    console.log(htmll[0]);
+</script>
+
+</html>
