@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        // 用遍历改div不同颜色
+        // 把div中的数字相加，text()获取的数字是字符型，要用parseInt()转成数字型
+        var sum = 0;
+        var arr = ['red', 'pink', 'blue']
+        $("div").each(function(index, domEle) {
+            $(domEle).css("color", arr[index]);
+            sum += parseInt($(domEle).text());
+        });
+        console.log(sum);
+    </script>
+</body>
+
+</html>

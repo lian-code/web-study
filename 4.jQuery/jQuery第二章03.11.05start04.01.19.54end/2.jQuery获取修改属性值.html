@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="iii"></div>
+    <input type="checkbox">
+    <script>
+        $(function() {
+            console.log($('div').prop('id')); //获取属性值
+            $("div").prop("id", "oooo"); //修改id属性值
+            console.log($('div').prop('id'));
+            console.log($("input").prop("checked"));
+            // 每次点击按钮查询选中状态
+            $("input").change(function() {
+                    console.log($(this).prop("checked"));
+                })
+                // 修改input的选中状态为ture;
+            $("input").prop("checked", "ture");
+            // 自定义属性操作attr();
+            // 添加div属性index属性值为1
+            $("div").attr("index", 1);
+            // 获取自定义属性值
+            $("div").data("kk", "ll"); //在元素中临时储存数据,不在DOM中显示
+            console.log($("div").data("kk"));
+        })
+    </script>
+</body>
+
+</html>

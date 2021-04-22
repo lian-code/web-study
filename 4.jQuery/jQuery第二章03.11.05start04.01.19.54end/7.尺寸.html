@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 500px;
+            height: 500px;
+            padding: 10px;
+            border: 5px solid red;
+            margin: 15px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        $(function() {
+            // console.log($("div").width(600));
+            // console.log($("div").innerWidth(600));padding不变，数字减去padding值，剩下的就是给width;
+            // console.log($("div").outerWidth(600));padding,border不变，数字减去padding,border值，剩下的就是给width;
+            // console.log($("div").outerWidth(true));
+        })
+    </script>
+</body>
+
+</html>

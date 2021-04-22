@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul class="ul">
+        <li class="li">11</li>
+    </ul>
+    <script>
+        $(function() {
+            // 创建
+            $("<li>222</li>");
+            // 添加
+            // 在元素内部前面
+            $(".ul").prepend($("<li>222</li>"));
+            // 在元素内部后面
+            $(".ul").append($("<li>222</li>"));
+            // 在元素旁边前面
+            $(".ul").before($("<li>222</li>"));
+            // 在元素旁边后面
+            $(".ul").after($("<li>222</li>"));
+            // 删除 
+            // 删除元素
+            // $("li").remove();
+
+            // 删除元素content
+            // $("li").html("");
+
+            // 删除元素content第二种
+            $("li").empty();
+        })
+    </script>
+</body>
+
+</html>

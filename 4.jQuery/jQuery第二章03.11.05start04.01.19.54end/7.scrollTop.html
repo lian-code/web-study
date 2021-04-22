@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        body {
+            height: 2000px;
+        }
+        
+        .back {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            right: 30px;
+            bottom: 100px;
+            display: none;
+        }
+        
+        .container {
+            width: 900px;
+            height: 500px;
+            background-color: skyblue;
+            margin: 400px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back">返回顶部</div>
+    <div class="container">
+    </div>
+    <script>
+        $(function() {
+            // 页面滚动事件犹如change事件，一变化就执行
+            $(document).scroll(function() {
+                // 当页面滚动到距离顶部大于等于.container距离顶部的距离时；
+                if ($("html").scrollTop() >= $(".container").offset().top) {
+                    // 渐入返回顶部按钮
+                    $(".back").fadeIn();
+                } else {
+                    // 反之就渐出返回顶部按钮
+                    $(".back").fadeOut();
+                };
+            });
+            // 需求：点击按钮即返回顶部
+            // 思路：点击按钮则document的scrollTop为（0）
+            $(".back").click(function() {
+                // $(document).scrollTop(0);
+                // 用scrollTop(0)返回顶部太生硬了，推荐用animate()动画方法
+                $("html").stop().animate({
+                    scrollTop: 0
+                })
+            });
+        })
+    </script>
+</body>
+
+</html>

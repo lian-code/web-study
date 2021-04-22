@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>div
+        <span>zhong</span>
+
+    </div>
+    <input type="text" value="来呀">
+    <script>
+        $(function() {
+            // 获取整个div内容html();
+            console.log($("div").html());
+            // 设置整个div内容html();
+            $("div").html("<span>kkkk</span>");
+            console.log($("div").html());
+
+            // 获取div文本内容text();
+            console.log($("div").text());
+            // 设置div文本内容text();
+            $("div").text("文本");
+
+            // 获取input元素的value值、用val();
+
+            console.log($("input").val());
+            // 设置修改input元素value值
+            $("input").val("11");
+            console.log($("input").val());
+
+        })
+    </script>
+</body>
+
+</html>
