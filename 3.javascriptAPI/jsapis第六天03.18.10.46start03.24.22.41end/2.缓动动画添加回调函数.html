@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <div></div>
+
+    <script>
+        var div = document.querySelector('div');
+        var button = document.querySelector('button');
+
+        function time(obj, target, valuee) {
+            clearInterval(obj.target);
+            obj.times = setInterval(function() {
+                var step = (target - obj.offsetLeft) / 10
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.target);
+                    if (valuee) {
+                        valuee();
+                    }
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 30)
+        }
+
+        // 调用函数
+        button.addEventListener('click', function() {
+            time(div, 1100, function() {
+                div.style.backgroundColor = 'red';
+            });
+        })
+    </script>
+</body>
+
+</html>

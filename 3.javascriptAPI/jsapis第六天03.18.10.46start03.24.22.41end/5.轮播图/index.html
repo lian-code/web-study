@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="animate.js"></script>
+    <script src="index.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        div {
+            position: relative;
+            overflow: hidden;
+            margin: 100px auto;
+            width: 721px;
+            height: 455px;
+            background-color: pink;
+        }
+        
+        .banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 800%;
+        }
+        
+        .banner li {
+            float: left;
+        }
+        
+        span:nth-of-type(1),
+        span:nth-of-type(2) {
+            position: absolute;
+            top: 50%;
+            margin-top: -10px;
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: red;
+            z-index: 100;
+            display: none;
+        }
+        
+        span:nth-of-type(1) {
+            left: 0;
+        }
+        
+        span:nth-of-type(2) {
+            right: 0;
+        }
+        
+        .littleround {
+            position: absolute;
+            bottom: 20px;
+            left: 300px;
+        }
+        
+        .littleround li {
+            float: left;
+            margin-right: 16px;
+            width: 16px;
+            height: 16px;
+            border: 1px solid white;
+            border-radius: 50%;
+            z-index: 9999;
+        }
+        
+        .littleroundcolor {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- banner图片 -->
+        <ul class="banner">
+            <li>
+                <a href="#"><img src="upload/focus.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="upload/focus1.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="upload/focus2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="upload/focus3.jpg" alt=""></a>
+            </li>
+        </ul>
+        <!-- 左右按钮 -->
+        <span><</span>
+        <span>></span>
+        <!-- 小圆点 -->
+        <ul class="littleround">
+        </ul>
+    </div>
+</body>
+
+</html>

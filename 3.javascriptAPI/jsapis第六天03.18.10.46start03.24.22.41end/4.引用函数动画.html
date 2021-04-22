@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="animate.js"></script>
+
+    <style>
+        div {
+            position: fixed;
+            right: 0;
+            top: 100px;
+            width: 50px;
+            /* height: 50px; */
+        }
+        
+        .span1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            z-index: 10;
+        }
+        
+        .span2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100px;
+            height: 50px;
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <span class="span1">我回来了</span>
+        <span class="span2">淘宝侧边栏</span>
+        <script>
+            var div = document.querySelector('div');
+            var span1 = document.querySelector('.span1');
+            var span2 = document.querySelector('.span2');
+            div.addEventListener('mouseover', function() {
+                animate(span2, -100, function() {
+                    span1.innerHTML = '我变了'
+                })
+            })
+            div.addEventListener('mouseout', function() {
+                animate(span2, 100, function() {
+                    span1.innerHTML = '我回来了'
+                })
+            })
+        </script>
+    </div>
+</body>
+
+</html>
