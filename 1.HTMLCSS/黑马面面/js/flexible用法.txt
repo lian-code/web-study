@@ -1,0 +1,2 @@
+直接index.html中的body用script引入js文件，有自动按设备宽度来调整html中font-size大小的功能。
+这是淘宝的rem布局方法，是把屏幕分为10等分。

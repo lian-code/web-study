@@ -1,0 +1,103 @@
+// 引入common.less样式，然后index.html只引入index.css文件，不用去引入common.css样式了。
+@import "common.less";
+// 定义整个body手机显示界面
+body {
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 15rem;
+    line-height: 1.5;
+    font-family: Arial,Helvetica;
+    background-color: #f2f2f2;
+	height: 20000px;
+}
+// 定义一个750px模板的专属变量
+@size: 50rem;
+// 顶部搜索模块start
+.search-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 750 / @size;
+    height: 88 / @size;
+    background-color: #ffc001;
+    .search-1 {
+        width: 44 / @size;
+        height: 70 / @size;
+        margin: 11 / @size 25 / @size 10 / @size 25 / @size;
+        background: url(../images/classify.png) no-repeat;
+		background-size: 44 / @size 70 / @size;
+    }
+    .search {
+        flex: 1;
+		input {
+			width: 100%;
+			height: 66 / @size;
+			background-color: #fff2cc;
+			text-indent: 2em;
+			font-size: 25 / @size;
+			border: 0;
+			outline: none;
+			border-radius: 33 / @size;
+		}
+    }
+    .search-2 {
+        width: 75 / @size;
+        height: 70 / @size;
+        margin: 10 / @size;
+		font-size: 25 / @size;
+		line-height: 70 / @size;
+		text-align: center;
+		color: #fff;
+    }	
+}
+ // 顶部搜索模块end
+ // 横幅banner start
+ .banner {
+	 height: 368 / @size;
+	 img {
+		 width: 100%;
+	 }
+}
+ // 横幅banner end
+ // 广告ad start
+ .ad {
+	 display: flex;
+	 a {
+		flex: 1;
+		img {
+			width: 100%;
+		}
+	 }
+ }
+ // 广告ad end
+ // nav1导航 start 用flex弹性布局
+ .nav {
+	 display: flex;
+	 flex-wrap: wrap;
+	 a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 20%;
+		img {
+			width: 82 / @size;
+			height: 82 / @size;
+			margin: 12 / @size 0;
+		}
+		span {
+			font-size: 25 / @size;
+			color: #333;
+		}
+	 }
+ }
+ // nav导航 end 
+	 
+ * {
+	 margin: 0;
+	 padding: 0;
+	 box-sizing: border-box;
+ }
+ 
+ 

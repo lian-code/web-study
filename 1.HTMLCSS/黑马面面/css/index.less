@@ -1,0 +1,152 @@
+// a链接去除下划线
+a {
+    text-decoration: none;
+}
+// 定义body
+body {
+    min-width: 320px;
+    max-width: 750px;
+    height: 2000px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+// 限制750px宽度的screen字体大小都为37.5px
+@media screen and (min-width: 750px) {
+    html {
+        font-size: 37.5px;
+    }
+}
+// title标题
+.title {
+    height: 2.266667rem;
+    border-bottom: .026667rem solid #EAEAEA;
+    font-size: .933333rem;
+    color: #1C1C1C;
+    text-align: center;
+    line-height: 2.24rem;
+}
+// nav导航栏start
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.333333rem 0;
+    a {
+        flex: 33.333%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 3.706667rem;
+            height: 3.706667rem;
+            margin-bottom: .426667rem;
+        }
+        span {
+            line-height: .72rem;
+            font-size: .666667rem;
+            color: #707070;
+        }
+        &:nth-of-type(-n+3) {
+            margin-bottom: 1.866667rem;
+        }
+    }
+}
+// ad广告start
+.ad {
+    padding: 0 .373333rem 1.146667rem .373333rem;
+}
+// work就业指导模块
+.work {
+    height: 15.866667rem;
+    border-top: .266667rem solid #F2F4F7;
+    border-bottom: .266667rem solid #F2F4F7;
+    padding: 1.066667rem 0;
+    .work_hd {
+        height: 1.013333rem;
+        padding: 0 .586667rem;
+        line-height: 1.013333rem;
+        img {
+            float: left;
+            width: 1.013333rem;
+            height: 1.013333rem;
+            margin-right: .48rem;
+        }
+        span {
+            float: left;
+            font-size: .746667rem;
+            font-weight: 700;
+            color: #333333;
+        }
+        a {
+            float: right;
+            font-size: .586667rem;
+            color: #999999;
+        }
+    }
+}
+// study充电学习模块
+.study {
+    height: 12.986667rem;
+    padding: 1.066667rem 0;
+    .study_hd {
+        height: 1.013333rem;
+        padding: 0 .586667rem;
+        line-height: 1.013333rem;
+        img {
+            float: left;
+            width: 1.013333rem;
+            height: 1.013333rem;
+            margin-right: .48rem;
+        }
+        span {
+            float: left;
+            font-size: .746667rem;
+            font-weight: 700;
+            color: #333333;
+        }
+        a {
+            float: right;
+            font-size: .586667rem;
+            color: #999999;
+        }
+    }
+}
+// footer底部固定定位
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 20rem;
+    height: 3.04rem;
+    border-top: .026667rem solid #E2E2E2;
+    a {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        div {
+            position: relative;
+            width: 1.093333rem;
+            height: 1.093333rem;
+            margin-bottom: .266667rem;
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                width: 1.066667rem;
+            }
+        }
+        span {
+            font-size: .586667rem;
+            color: #666666;
+        }
+        &:nth-of-type(1) {
+            span {
+                color: #52C4F0;
+            }
+        }
+    }
+}

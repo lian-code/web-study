@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            float: left;
+            text-align: center;
+            width: 230px;
+            margin-left: 50px;
+        }
+        img {
+            display: block;
+        }
+        p {
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 5px;
+            background-color: greenyellow;
+            margin-top: 100px;
+        }
+        p::after {
+            content: '';
+            position: absolute;
+            right: -3px;
+            top: 2px;
+            width: 10px;
+            height: 10px;
+            border: 5px solid greenyellow;
+            border-left: 0;
+            border-bottom: 0;
+            transform-origin: right top;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./images/Snipaste_2021-01-08_09-31-40.png" alt="">
+        <span>用flex布局做这效果思路1.2.3.</span>
+    </div>
+    <p></p>
+    <div>
+        <img src="./images/Snipaste_2021-01-08_09-32-44.png" alt="">
+        <span>1.默认轴是x轴</span>
+    </div>
+    <div>
+        <img src="./images/Snipaste_2021-01-08_09-32-04.png" alt="">
+        <span>2.把主轴设为y轴flex-direction: column;</span>
+    </div>
+    <div>
+        <img src="./images/Snipaste_2021-01-08_09-31-40.png" alt="">
+        <span>3.主轴侧轴都居中justify-content: center; align-items: center;</span>
+    </div>
+
+</body>
+</html>

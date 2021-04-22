@@ -1,0 +1,98 @@
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+  }
+}
+@media screen and (max-width: 991px) {
+  nav a {
+    width: 20%;
+    float: left;
+  }
+}
+@media screen and (max-width: 767px) {
+  .news li {
+    width: 50%!important;
+  }
+  .news li:nth-of-type(1) {
+    width: 100%!important;
+  }
+}
+li {
+  list-style: none;
+}
+p {
+  margin: 0;
+}
+.col-md-2 {
+  padding-left: 0;
+}
+.col-md-2 > a {
+  display: block;
+  background-color: #429ad9;
+}
+.col-md-2 > a img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+.col-md-2 > span {
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #429ad9;
+  font-size: 20px;
+  color: #fff;
+}
+.col-md-2 nav a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  background-color: #eeeeee;
+  color: #4a6887;
+  padding-left: 30px;
+}
+.col-md-2 nav a::before {
+  vertical-align: middle;
+}
+.col-md-7 .news {
+  padding-left: 0;
+}
+.col-md-7 .news li {
+  padding-right: 10px;
+  padding-bottom: 10px;
+  float: left;
+  width: 25%;
+  height: 138px;
+}
+.col-md-7 .news li:nth-of-type(1) {
+  width: 50%;
+  height: 276px;
+}
+.col-md-7 .news li:nth-of-type(1) a p {
+  font-size: 20px;
+  padding: 0 10px;
+}
+.col-md-7 .news li a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.col-md-7 .news li a img {
+  width: 100%;
+  height: 100%;
+}
+.col-md-7 .news li a p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 41px;
+  line-height: 41px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 12px;
+  padding: 0 5px;
+}
