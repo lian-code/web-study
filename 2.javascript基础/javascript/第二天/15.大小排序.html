@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 把下列数据从大到小排序
+        // 1.建立一个空的数组
+        // 2.先把最小的数放到最后边
+        var Array = [4, 5, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 6, 7, 199, 999, 33, 5, 55, 3224, 1223, 132, 124, 12, 125, 54, 546, 11, 241, 1, 231, 1, 124];
+        for (var j = 0; j < Array.length; j++) {
+            for (var i = 0; i < Array.length; i++) {
+                if (Array[i] < Array[i + 1]) {
+                    var empty = Array[i];
+                    Array[i] = Array[i + 1];
+                    Array[i + 1] = empty;
+                }
+            }
+        }
+        console.log(Array);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
