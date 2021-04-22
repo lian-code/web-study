@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 200px;
+        }
+        
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+    <script>
+        // 1.获取元素
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        // 2.倒计时赋值给显示模块
+        function times() {
+            var date = +new Date();
+            var dateNow = +new Date('2021-03-15 12:00:00');
+            var time = (dateNow - date) / 1000;
+            var h = parseInt(time / 60 / 60); //整数小时
+            var m = parseInt(time / 60 % 60); //整数分钟
+            var s = parseInt(time % 60); //整数秒数
+            hour.innerHTML = h;
+            minute.innerHTML = m;
+            second.innerHTML = s;
+        }
+        // 3.先调用函数，解决打开页面定时器卡顿问题
+        times();
+        // 4.定时调用函数，用于动态刷新页面，重复调用使用setInterval()
+        setInterval(times, 1000);
+    </script>
+</body>
+
+</html

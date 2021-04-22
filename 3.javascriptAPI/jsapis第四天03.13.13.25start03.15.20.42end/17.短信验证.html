@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    手机验证码：<input type="text"><button>发送</button>
+    <script>
+        var button = document.querySelector('button');
+        var num = 3;
+        button.addEventListener('click', function() {
+            this.disabled = true;
+            var valuee = setInterval(function() {
+                if (num == 0) {
+                    clearInterval(valuee);
+                    button.disabled = false;
+                    button.innerHTML = '发送';
+                    num = 3;
+
+                } else {
+                    button.innerHTML = '再等' + num + '秒';
+                    num--;
+                }
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>
