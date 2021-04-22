@@ -1,0 +1,62 @@
+/* 字体图标样式 */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?tomleg');
+  src:  url('fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?tomleg') format('truetype'),
+    url('fonts/icomoon.woff?tomleg') format('woff'),
+    url('fonts/icomoon.svg?tomleg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+/* 清除内外边距 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* 版心居中对齐,宽度1200 */
+.w {
+	width: 1200px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+/* 去除小例圆点 */
+li {
+	list-style: none;
+}
+/* 去除a链接下划线 */
+a {
+	text-decoration: none;
+	color: #575757;
+	font-size: 14px;
+}
+/* 经过a链接字体变绿色增加下划线*/
+a:hover {
+	color: #1a7a32;
+	text-decoration: underline;
+}
+/* 每个内容头部 高度 文字垂直居中 1px下边框 下外边距16px */
+.article_hd {
+	height: 41px;
+	line-height: 40px;
+	border-bottom: 1px solid #00a44e;
+	margin-bottom: 16px;
+}
+/* 每个内容头部左边标题 */
+.article_hd_left {
+	    float: left;
+		display: block;
+		padding: 0 20px;
+		text-align: center;
+		height: 40px;
+		line-height: 40px;
+		background-color: #00a44e;
+		color: #fff;
+}
+/* 每个内容头部右边更多 */
+.article_hd_right {
+	float: right;
+	color: #a2a2a2;
+}
