@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        .current {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ol></ol>
+    <script>
+        // 移入div变换红色，离开变换blue
+        $(function() {
+            // 一。1.单个注册事件
+            // $("div").mouseenter(function() {
+            //     $(this).css("background", "red");
+            // })
+            // $("div").mouseleave(function() {
+            //     $(this).css("background", "blue");
+            // });
+
+            // 2.一个元素多个注册事件on()方法,多个事件用,逗号分隔
+            // 以对象的形式写在on()方法里边,类似style设置对象模式
+            // $("div").on({
+            //     mouseenter: function() {
+            //         $(this).css("background", "red");
+            //     },
+            //     mouseleave: function() {
+            //         $(this).css("background", "blue");
+            //     }
+            // });
+
+            // 3.一个元素多个事件一个事件处理程序，
+            // 比如mouseenter mouseleave 都用同个事件处理程序：切换类名toggleClass()方法。
+            $("div").on("mouseenter mouseleave", function() {
+                $(this).toggleClass("current");
+            });
+
+            // 二.事件委派on()方法优势
+            // 点击小例弹出对话框11，用$("ul li")注册事件会自动注册多个小例的事件
+            // 用on()方法中的事件委派只给li的父亲ul添加注册事件，不会造成页面臃肿
+            // $("ul").on("click", "li", function() {
+            //     // 点击的是小例，用的是父亲ul的事件处理程序
+            //     alert(11);
+            // });
+
+            // 三.on()方法优势：可以给未来创建的元素注册事件
+            // 先给未来元素写注册事件
+
+            // 用单个注册事件,只能写在创建添加元素代码的后面
+            // $("ol li").click(function() {
+            //     alert(111);
+            // });
+
+            // 用on()写注册事件，可以写在创建元素的前面，他也会执行
+            // $("ol").on("click", "li", function() {
+            //     alert(111);
+            // });
+
+            // ol里边没有元素，想创建元素追加元素后给元素注册事件
+            var li = $("<li>我是后来创建的</li>");
+            $("ol").append(li);
+            $("ol li").click(function() {
+                alert(111);
+            });
+
+        })
+    </script>
+</body>
+
+</html>

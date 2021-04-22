@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(function() {
+            // 浅拷贝会把对象里边的简单数据复制一份给接受的对象，但是里边的复杂数据只是复制地址给接受对象，也就是共用一个复杂数据，在接受拷贝的这个对象里更改复杂数据的属性值，被拷贝对象中复杂数据的属性值也会同步改变.
+            // 浅拷贝中接受拷贝的对象与被拷贝对象中有重复的属性值时，覆盖原先的属性值，里边的复杂数据看做属性与属性值
+
+            // 深拷贝中接受拷贝的对象与被拷贝对象中有重复的属性值时，覆盖原先的属性值，但是会深度解析里边复杂数据进行覆盖
+            // 深拷贝true则不会，它是把简单与复杂数据一并拷贝过去
+            // var target = {
+            //     jj: "kk"
+            // };
+            // var obj = {
+            //     age: 20,
+            //     name: "lianhaowei"
+            // };
+            // $.extend(target, obj);
+            // target.age = 18;
+            // console.log(target);
+            // console.log(obj);
+
+            var target = {
+                mas: {
+                    kk: "kk",
+                    ij: {
+                        ff: "ff"
+                    }
+                }
+            };
+            var obj = {
+                age: 20,
+                name: "lianhaowei",
+                mas: {
+                    hh: "hh",
+                    ij: {
+                        yy: "yy"
+                    }
+                }
+            };
+            $.extend(target, obj);
+            console.log(target);
+            console.log(obj);
+
+        })
+    </script>
+</body>
+
+</html>

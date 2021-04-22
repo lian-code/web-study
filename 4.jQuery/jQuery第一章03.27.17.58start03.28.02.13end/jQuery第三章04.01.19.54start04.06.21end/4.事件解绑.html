@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        $(function() {
+            // 经过div 点击div
+            // $("div").on({
+            //     mouseenter: function() {
+            //         console.log("经过div");
+            //     },
+            //     click: function() {
+            //         console.log("点击div");
+            //     },
+            // });
+
+            // 解绑全部事件off()
+            // $("div").off();
+
+            // 解绑其中一个事件
+            // $("div").off("click");
+
+            // 只执行一次事件用one()方法
+            // $("div").one({
+            //     mouseenter: function() {
+            //         console.log("经过div");
+            //     },
+            //     click: function() {
+            //         console.log("点击div");
+            //     },
+            // });
+
+            // 点击小例事件委托ul
+            $("ul").on("click", "li", function() {
+                console.log("dianjile");
+            });
+
+            // 解绑事件委托
+            // $("ul").off();
+            $("ul").off("click", "li");
+
+        })
+    </script>
+</body>
+
+</html>

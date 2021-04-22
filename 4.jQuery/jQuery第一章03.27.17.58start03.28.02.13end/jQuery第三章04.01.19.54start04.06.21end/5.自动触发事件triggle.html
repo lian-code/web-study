@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <input type="text">
+    <script>
+        $(function() {
+            $("input").on("focus", function() {
+                console.log(11);
+            });
+            // 打开页面自动触发事件1
+            // $("input").focus();
+
+            // 2.triggle()触发方法
+            // $("input").trigger("focus");
+
+            // 3.triggerHandler()触发事件处理程序,不会触发元素默认行为，比如光焦
+            // $("input").triggerHandler("focus");
+        })
+    </script>
+</body>
+
+</html>
