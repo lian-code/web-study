@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* clientWidth / Height 不包含边框 */
+        
+        div {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        11
+    </div>
+    <script>
+        var div = document.querySelector('div');
+        console.log(div.clientHeight);
+        console.log(div.clientTop);
+    </script>
+</body>
+
+</html>
