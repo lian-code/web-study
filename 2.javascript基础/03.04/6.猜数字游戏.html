@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var sjs = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+        console.log(sjs);
+        while (true) {
+            var shuzi = prompt('请输入您的数字');
+            if (sjs > shuzi) {
+                alert('您的数字小了');
+            } else if (sjs < shuzi) {
+                alert('您的数字大了');
+            } else {
+                alert('相符');
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

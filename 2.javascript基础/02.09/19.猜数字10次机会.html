@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sjs(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var sjs = sjs(1, 10);
+        console.log(sjs);
+
+        for (var i = 0; i < 2; i++) {
+            var num = prompt('请输入1到10的数字，你有2次机会');
+            if (num > sjs) {
+                alert('你猜大了，继续猜');
+            } else if (num < sjs) {
+                alert('你猜小了，继续猜');
+            } else {
+                alert('你猜对了，结束');
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

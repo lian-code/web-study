@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 利用构造函数创建两个英雄对象。函数中的公共部分包括：姓名属性(name)，类型属性（type），血量属 性（blood）和攻击方式（attack）。 英雄对象的信息如下 ： l 廉颇 力量型 500血量 攻击 ：近战 l 后羿 射手型 100血量 攻击： 远程
+        var obj = {
+            myName: 'lianpo',
+            type: 'power',
+            blood: 500
+        }
+        console.log(obj.myName);
+
+        var obj1 = new Object();
+        obj1.myName = 'lianpo';
+        obj1.type = 'power';
+        obj1.blood = 500;
+        console.log(obj1.type);
+
+        function Obj(name1, type1, blood1) {
+            this.myName = name1;
+            this.type = type1;
+            this.blood = blood1;
+        }
+        var lp = new Obj('lianpo', 'power', 500);
+        console.log(lp.myName);
+        var hy = new Obj('houyi', 'ppp', 200);
+        console.log(hy.blood);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

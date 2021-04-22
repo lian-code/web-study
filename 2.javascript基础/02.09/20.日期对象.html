@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var date = new Date();
+        // 输出年月日星期时分秒
+        console.log(date);
+        console.log(date.getFullYear());
+        console.log(date.getMonth() + 1);
+        console.log(date.getDate());
+        console.log(date.getDay());
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getSeconds());
+        // 输出今天是几年几月几日星期几几时几分几秒
+        function now() {
+            var date1 = new Date();
+            var y = date1.getFullYear();
+            var m = date1.getMonth() + 1;
+            if (m < 10) {
+                m = '0' + m;
+            }
+
+            var d = date1.getDate();
+            if (d < 10) {
+                d = '0' + d;
+            }
+
+            var day = date1.getDay();
+            var days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var h = date1.getHours();
+            if (h < 10) {
+                h = '0' + h;
+            }
+
+            var mi = date1.getMinutes();
+            if (mi < 10) {
+                mi = '0' + mi;
+            }
+
+            var s = date1.getSeconds();
+            if (s < 10) {
+                s = '0' + s;
+            }
+            return '今天是' + y + '年' + m + '月' + d + '日' + days[day] + h + '时' + mi + '分' + s + '秒'
+        }
+        console.log(now());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

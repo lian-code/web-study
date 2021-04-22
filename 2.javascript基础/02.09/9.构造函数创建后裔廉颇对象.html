@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Wz(name, type, blood) {
+            this.name = name;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function(attack) {
+                console.log(attack);
+            }
+        }
+        var houyi = new Wz('后裔', '射手', 500),
+            lianpo = new Wz('廉颇', '战士', 600);
+        alert(houyi.name);
+        houyi.attack('远程');
+        alert(lianpo.name);
+        lianpo.attack('近战');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

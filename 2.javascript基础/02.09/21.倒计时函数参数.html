@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 距离2021年2月26日2时14分还有多久
+        function countDowd(times) {
+            var date = new Date();
+            var time = date.getTime();
+            var date1 = new Date(times);
+            var time1 = date1.getTime();
+            var sec = (time1 - time) / 1000;
+            var d = parseInt(sec / 60 / 60 / 24);
+            if (d < 10) {
+                d = '0' + d;
+            }
+
+            var h = parseInt(sec / 60 / 60 % 24);
+            if (h < 10) {
+                h = '0' + h;
+            }
+
+            var m = parseInt(sec / 60 % 60);
+            if (m < 10) {
+                m = '0' + m;
+            }
+
+            var s = parseInt(sec % 60);
+            if (s < 10) {
+                s = '0' + s;
+            }
+
+            return '倒计时' + d + '天' + h + '时' + m + '分' + s + '秒'
+
+        }
+        console.log(countDowd('2021-02-26 02:14:00'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
