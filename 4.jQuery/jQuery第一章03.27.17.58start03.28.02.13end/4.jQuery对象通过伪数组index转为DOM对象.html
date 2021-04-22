@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <video src="mov.mp4" muted></video>
+    <script>
+        // 原生js播放
+        var video = document.querySelector('video');
+        // video.play();
+        // jQuery没有播放。、，转为DOM对象
+        // 利用数组
+        $(video)[0].play();
+    </script>
+</body>
+
+</html>

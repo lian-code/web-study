@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- 点击button按钮wenzi变色 -->
+    <button>anniu</button>
+    <button>anniu</button>
+    <button>anniu</button>
+    <button>anniu</button>
+    <button>anniu</button>
+    <button>anniu</button>
+    <script>
+        $(function() {
+            $('button').click(function() {
+                $(this).css('color', 'red').siblings('button').css('color', 'pink')
+            })
+        })
+    </script>
+</body>
+
+</html>
