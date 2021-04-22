@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        ul
+        <li>li</li>
+    </ul>
+    <script>
+        var lis = document.querySelector('ul').children; //子节点
+        console.log(lis);
+        var ul = lis[0].parentNode; //父节点
+        console.log(ul);
+        var li1 = document.createElement('li'); //创建子节点
+        ul.appendChild(li1); //在父元素所有子元素后边添加子节点
+        var aa = document.createElement('a'); //创建子节点
+        ul.insertBefore(aa, ul.children[0]); //父元素指定子元素后边添加子节点
+        ul.removeChild(li1); //删除子节点
+        var cloneNodeul = ul.cloneNode(true); //括号带true为深克隆，子元全克隆
+        console.log(cloneNodeul);
+    </script>
+</body>
+
+</html>
