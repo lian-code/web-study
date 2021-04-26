@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>阿牛</button>
+    <script>
+        (function() {
+            'use strict'; //开启严格模式
+
+            // 1.变量未声明，添加var会报错
+            // num = 0;
+            // console.log(num);
+
+            // 2.不能删除已经声明的变量
+            // var str = '字符串';
+            // delete str;
+
+            // this指向
+            // 1.全局函数中this指向undefined
+            function fn() {
+                console.log(this);
+            };
+            fn();
+
+            // 2.构造函数不加new调用this指向window，如给它赋值则会报错，因为他是给undefined添加uname属性
+            function Star(name) {
+                this.uname = name;
+                console.log(this);
+            };
+            // Star('连浩伟');
+
+
+
+            // 相同点
+            // 3.new实例对象中this指向实例对象.,与原先一样
+            var lhw = new Star('连浩伟');
+
+            // 4.定时器里边的this还是widow
+            setInterval(function() {
+                console.log(this);
+            }, 2000);
+
+            // 5.事件里边的this还是指向调用者
+            var button = document.querySelector('button');
+            button.addEventListener('click', function() {
+                console.log(this);
+            });
+
+            // 5.对象中的this也是指向对象本身
+            var obj = {
+                uuu: this,
+            };
+            console.log(obj);
+        })()
+    </script>
+</body>
+
+</html>

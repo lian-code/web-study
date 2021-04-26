@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 为整个脚本开启严格模式 -->
+    <!-- 1.在整个脚本之前开启严格模式 -->
+    <script>
+        'use strict'; //在整个脚本之前开启严格模式
+    </script>
+    <!-- 2.但是有些脚本开启有些不开启，不利于合并 -->
+    <!-- 在脚本中写一个立即执行函数，在立即执行函数中前面开启严格模式 -->
+    <!-- 之后就可以把代码全部编写到立即执行函数中了 -->
+    <script>
+        (function() {
+            'use strict';
+
+            function fn() {
+
+            };
+        })()
+    </script>
+
+    <!-- 为局部函数开启严格模式 -->
+    <script>
+        function fn() {
+            'use strict'; //这个函数开启严格模式
+        };
+
+        function fun() {
+            //这个函数不开启严格模式
+        };
+    </script>
+</body>
+
+</html>

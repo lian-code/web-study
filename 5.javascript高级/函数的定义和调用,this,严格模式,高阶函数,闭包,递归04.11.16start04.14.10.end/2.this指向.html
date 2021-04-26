@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <script>
+        // 函数的调用方式
+
+        // 1. 普通函数  
+        function fn() {
+            console.log(this); //window
+        };
+        fn();
+        // 2. 对象的方法  
+        var fun = {
+            sing: function() {
+                console.log(this); //对象
+            },
+        };
+        fun.sing();
+        // 3. 构造函数   
+        function FUN(name) {
+            this.uname = name;
+            console.log(this); //实例对象
+        };
+        var lhw = new FUN('连浩伟');
+        // 4. 绑定事件函数
+        var but = document.querySelector('button');
+        but.onclick = function() {
+            console.log(this); //事件的调用者
+        };
+        but.click();
+        // 5. 定时器函数
+        setTimeout(function() {
+            console.log(this); //window
+        });
+        setInterval(function() {
+            console.log('定时函数1秒执行一次' + this); //window
+        }, 1000);
+        // 6. 立即执行函数
+        (function() {
+            console.log('我写在两个括号里，是立即执行函数' + this); //window
+        })();
+        // 立即执行函数是自动调用
+    </script>
+</body>
+
+</html>

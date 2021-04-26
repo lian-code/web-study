@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = 0;
+        // 就是在函数中再次调用函数
+        function fn() {
+            num++;
+            // 必须在递归函数中给定停止条件
+            console.log(5);
+            if (num == 5) {
+                return;
+            }
+            fn();
+        };
+        fn();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 深拷贝
+        var oldObj = {
+            uname: '连浩伟',
+            mas: {
+                age: 20,
+            },
+            mass: ['zhou', 'lian'],
+        };
+        var newObj = {};
+
+        function deepCopy(newobj, oldobj) {
+            for (var key in oldobj) {
+                // 判断属性值是否为复杂数据，复杂数据类型有数组 对象，如是则另外操作；不是即直接赋值。
+                var oldValue = oldobj[key];
+                if (oldValue instanceof Array) { //数组条件要写在对象前面，因为数组也是属于对象的一种
+                    newobj[key] = []; //给拷贝对象新建一个空的数组属性
+                    deepCopy(newobj[key], oldValue); //属性看做新的拷贝对象，属性值看做旧的被拷贝对象，重新递归函数
+                } else if (oldValue instanceof Object) {
+                    newobj[key] = {}; //给拷贝对象新建一个空的对象属性
+                    deepCopy(newobj[key], oldValue);
+                } else {
+                    newobj[key] = oldValue;
+                }
+            }
+        };
+        deepCopy(newObj, oldObj);
+        console.log(newObj);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 闭包的作用：延伸的变量的作用范围
+        function fn() {
+            var num = 10;
+            return function fun() {
+                console.log(num);
+            };
+        }
+        var func = fn();
+        func();
+        // fn()函数外边的func函数访问了里边的变量，形成了闭包
+        // 闭包是典型的高阶函数
+    </script>
+</body>
+
+</html>

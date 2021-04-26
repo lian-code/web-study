@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 浅拷贝，拷贝一层，下面层次复杂数据类型都只是复制地址，修改拷贝对象，被拷贝对象也会被修改
+        var obj = {
+            uname: '连浩伟',
+            mas: {
+                age: 20,
+            },
+        }
+        var newObj = {};
+        // for (var k in obj) {
+        //     newObj[k] = obj[k]
+        // };
+        // console.log(newObj);
+        Object.assign(newObj, obj);
+        console.log(newObj);
+    </script>
+</body>
+
+</html>

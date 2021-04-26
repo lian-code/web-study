@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var data = [{
+            id: 1,
+            uname: '家电',
+            goods: [{
+                id: 11,
+                uname: '洗衣机'
+            }, {
+                id: 12,
+                uname: '空调'
+            }]
+        }, {
+            id: 2,
+            uname: '服饰',
+            goods: [{
+                id: 21,
+                uname: '上衣'
+            }, {
+                id: 22,
+                uname: '裤子'
+            }]
+        }];
+        //输入id得到当前对象
+        function getID(array, id) {
+            var obj = {}; //外面声明变量接受
+            // 遍历这个数组，如果数组中元素中的id等于输入的id，则返回当前数组元素
+            array.forEach(function(value) {
+                if (value.id == id) {
+                    obj = value;
+                } else if (value.goods && value.goods.length > 0) { //确保goods存在，如果某个元素中有goods这个属性存在，则遍历这个属性，因为这个属性中存在包含id的对象
+                    obj = getID(value.goods, id);
+                };
+            });
+            return obj;
+        };
+        console.log(getID(data, 21));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 需求：点击按钮禁用，2秒后又解禁按钮 -->
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+
+    <script>
+        // bind()不会调用函数 他会返回一个新的函数
+        // 适用于又想改变this指向,又想不马上执行，适用于定时器修改this指向
+
+        // 获取所有按钮元素
+        // 遍历所有按钮
+        // 所有按钮添加绑定事件
+        // 禁用按钮
+        // 开启一次性定时器，解禁按钮函数，2秒（）
+        var button = document.querySelectorAll('button');
+
+        // 1.普通写法
+        // for (var i = 0; i < button.length; i++) {
+        //     button[i].addEventListener('click', function() {
+        //         this.disabled = true;
+        //         var that = this; //把当前指向这个按钮的this赋值给that
+        //         setTimeout(function() {
+        //             // 在定时器函数里边用that
+        //             that.disabled = false; //定时器里边函数this指向是window
+        //         }, 2000)
+        //     })
+        // };
+
+        // 2.高级写法
+        for (var i = 0; i < button.length; i++) {
+            button[i].addEventListener('click', function() {
+                    this.disabled = true;
+                    setTimeout(function() {
+                        this.disabled = false; //因为定时器里边只有函数this指向是window
+                    }.bind(this), 2000); //函数外边this指向都是当前的调用者
+                }) //用bind()改变this,不需要立即调用函数，所以不适用call()   apply()
+        };
+
+
+
+
+
+
+        // var l = {
+        //     name: 'kk'
+        // }
+
+        // function fn(x, y) {
+        //     console.log(this);
+        //     console.log(x + y);
+        // };
+        // var b = fn.bind(l, 1, 2); //返回不会调用
+        // b(); //调用新的函数
+        // var jj = fn.bind(l, 9, 9);
+        // jj();
+    </script>
+</body>
+
+</html>

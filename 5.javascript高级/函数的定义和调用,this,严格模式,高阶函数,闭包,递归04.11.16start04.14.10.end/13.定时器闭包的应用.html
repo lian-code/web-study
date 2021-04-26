@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+
+    <script>
+        // 要求：三秒后打印出所有小例的文本
+
+        var lis = document.querySelectorAll('li');
+        // // 1.以前的方法
+        // setTimeout(function() {
+        //     for (var i = 0; i < lis.length; i++) {
+        //         console.log(lis[i].innerText);
+        //     }
+        // }, 2000);
+
+        // 2.利用小闭包-立即执行函数
+        for (var i = 0; i < lis.length; i++) {
+            // 多少小li创建多少小闭包-立即执行函数
+            (function(i) {
+                setTimeout(function() {
+                    console.log(lis[i].innerText);
+                }, 3000);
+            })(i) //接受i
+        }
+    </script>
+</body>
+
+</html>

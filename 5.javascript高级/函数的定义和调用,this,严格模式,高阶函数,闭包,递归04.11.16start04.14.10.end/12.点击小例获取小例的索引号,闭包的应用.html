@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+    <script>
+        // 1.以前获取小例索引号的操作
+        var lis = document.querySelectorAll('li');
+        // for (var i = 0; i < lis.length; i++) {
+        //     lis[i].index = i;
+        //     lis[i].onclick = function() {
+        //         console.log(this.index);
+        //     }
+        // };
+
+        // 2.使用小闭包-立即执行函数操作
+        for (var i = 0; i < lis.length; i++) {
+            // 循环生成lis.length个立即执行函数,即小闭包
+            // 立即自行函数最后括号接受参数，传递给第一个括号
+            // 里边定义点击事件，使用变量i，第几个i就输当前i
+            (function(i) {
+                lis[i].onclick = function() {
+                    console.log(i);
+                }
+            })(i) //立即自行函数最后括号接受参数，传递给第一个括号
+        };
+    </script>
+</body>
+
+</html>
