@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.中括号字符类
+        var rg = /[abc]/;
+        //匹配一个字符即返回true
+        console.log(rg.test('abc'));
+        console.log(rg.test('akk'));
+        console.log(rg.test('llc'));
+        console.log(rg.test('kkb'));
+        console.log('_____________');
+        // 2.中括号边界符,只能匹配一个字符串，注意是单个
+        var rg1 = /^[abc]$/
+        console.log(rg1.test('a')); //true
+        console.log(rg1.test('b')); //true
+        console.log(rg1.test('c')); //true
+        console.log(rg1.test('abc')); //false
+        console.log('_____________');
+        // 3.a-z表示从a到z的字母
+        var rg2 = /[a-z]/
+        console.log(rg2.test('abc'));
+        console.log(rg2.test('akk'));
+        console.log(rg2.test('llc'));
+        console.log(rg2.test('kkb'));
+        console.log('_____________');
+        // 4.加边界符的a-z
+        var rg3 = /^[a-z]$/;
+        console.log(rg3.test('a')); //true
+        console.log(rg3.test('b')); //true
+        console.log(rg3.test('c')); //true
+        console.log(rg3.test('abc')); //false
+        console.log('_____________');
+        // 5.字符组合
+        var rg4 = /^[a-zA-Z0-9_-]$/; //匹配大小字母a到z,跟杠，下划线其中一个即返回true
+        console.log(rg4.test('a')); //true
+        console.log(rg4.test('A')); //true
+        console.log(rg4.test('9')); //true
+        console.log(rg4.test('-')); //true
+        console.log(rg4.test('_')); //true
+        console.log(rg4.test('!')); //false
+        console.log('_____________');
+        // 6.中括号前面上插号^表示取反
+        var rg5 = /^[^a-zA-Z0-9_-]$/; //匹配不是 大小字母a到z,跟杠，下划线其中一个即返回true
+        console.log(rg5.test('a')); //false
+        console.log(rg5.test('A')); //false
+        console.log(rg5.test('9')); //false
+        console.log(rg5.test('-')); //false
+        console.log(rg5.test('_')); //false
+        console.log(rg5.test('!')); //true
+        console.log('_____________');
+    </script>
+</body>
+
+</html>

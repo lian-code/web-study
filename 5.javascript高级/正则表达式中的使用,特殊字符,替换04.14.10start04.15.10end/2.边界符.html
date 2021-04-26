@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 正则表达式中^开始$结束
+        // test检测
+        // 1.表达式中无开始结束符检测中有包括字符即返回true
+        var regexp = /abc/;
+        console.log(regexp.test('abc'));
+        console.log(regexp.test('abcd'));
+        console.log(regexp.test('aabc'));
+        // 2.表达式中有开始符检测中字符开头要与元字符相匹配
+        var regexp1 = /^abc/;
+        console.log(regexp1.test('abc')); //true
+        console.log(regexp1.test('abcd')); //true
+        console.log(regexp1.test('aabc')); //false
+        // 3.开始结束，需要完全一致
+        var regexp2 = /^abc$/;
+        console.log(regexp2.test('abc')); //true
+        console.log(regexp2.test('abcd')); //false
+        console.log(regexp2.test('aabc')); //false
+    </script>
+</body>
+
+</html>

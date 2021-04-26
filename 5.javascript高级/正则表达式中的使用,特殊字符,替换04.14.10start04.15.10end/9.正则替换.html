@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 点击提交，替换里边的敏感词 -->
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <input type="submit">
+    <div></div>
+    <script>
+        var textarea = document.querySelector('textarea');
+        var submit = document.querySelector('input');
+        var div = document.querySelector('div');
+        submit.addEventListener('click', function() {
+            div.innerHTML = textarea.value.replace(/激情|gay/gi, '**');
+        })
+    </script>
+</body>
+
+</html>

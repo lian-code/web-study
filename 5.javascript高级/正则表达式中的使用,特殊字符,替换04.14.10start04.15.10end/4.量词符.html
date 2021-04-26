@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.*可以出现零次跟很多次
+        var rg = /^a*$/;
+        console.log(rg.test('')); //true
+        console.log(rg.test('a')); //true
+        console.log(rg.test('aa')); //true
+        console.log(rg.test('b')); //false
+        console.log('--------------');
+        // 2.+可以出现1次跟无数次
+        var rg1 = /^a+$/;
+        console.log(rg1.test('')); //false
+        console.log(rg1.test('a')); //true
+        console.log(rg1.test('aa')); //true
+        console.log(rg1.test('b')); //false
+        console.log('--------------');
+        // 3.?可以出现0次跟1次
+        var rg2 = /^a?$/;
+        console.log(rg2.test('')); //true
+        console.log(rg2.test('a')); //true
+        console.log(rg2.test('aa')); //false
+        console.log(rg2.test('b')); //false
+        console.log('--------------');
+        // 4.重复三次{3}
+        var rg2 = /^a{3}$/;
+        console.log(rg2.test('')); //false
+        console.log(rg2.test('a')); //flase
+        console.log(rg2.test('aaa')); //true
+        console.log(rg2.test('b')); //false
+        console.log('--------------');
+        // 5.重复大于等于三次{3,}
+        var rg2 = /^a{3,}$/;
+        console.log(rg2.test('')); //false
+        console.log(rg2.test('a')); //flase
+        console.log(rg2.test('aaa')); //true
+        console.log(rg2.test('aaaaaaaa')); //true
+        console.log(rg2.test('b')); //false
+        console.log('--------------');
+        // 6.重复大于等于三次，小于等于十次
+        var rg2 = /^a{3,10}$/;
+        console.log(rg2.test('')); //false
+        console.log(rg2.test('a')); //flase
+        console.log(rg2.test('aaaaa')); //true
+        console.log(rg2.test('aaaaaaaaaaaaaaaaaaaaaaaaa')); //false
+        console.log(rg2.test('b')); //false
+        console.log('--------------');
+    </script>
+</body>
+
+</html>

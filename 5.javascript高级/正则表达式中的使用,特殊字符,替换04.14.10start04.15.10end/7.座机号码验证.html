@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 注意正则表达式中的或就是|
+        // 正斜杠\ d[0 - 9]
+        // 正斜杠\ D[ ^ 0 - 9]
+        // 正斜杠\ w[0 - 9 a - zA - Z_] 包括下滑线
+        // 正斜杠\ W[ ^ 0 - 9 a - zA - Z_]
+        // 正斜杠\ s[\t\ n\ r\ v\ f]
+        // 正斜杠\ S[ ^ \t\ n\ r\ v\ f]
+        // 0754-87817201 754-87817201这个格式号码正则表达式验证
+        var rg = /^\d{4}-\d{8}|\d{3}-\d{8}$/;
+        console.log(rg.test('0754-87817201'));
+        console.log(rg.test('754-87817201'));
+    </script>
+</body>
+
+</html>

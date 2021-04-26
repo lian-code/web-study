@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <span>请输入用户名</span>
+    <script>
+        var rg = /^[a-zA-Z0-9_-]{6,10}$/;
+        console.log(rg.test('sd78')); //false
+        console.log(rg.test('gghdg*')); //false
+        console.log(rg.test('ge2duieodgui378788jbb')); //false
+        console.log(rg.test('sd78kj-_')); //true
+        var input = document.querySelector('input');
+        var span = document.querySelector('span');
+        input.addEventListener('blur', function() {
+            if (rg.test(this.value)) { //用户名输入限制大小写字母数字下划线横杆
+                span.style.color = 'green';
+                span.innerText = '用户名可用';
+            } else {
+                span.style.color = 'red';
+                span.innerText = '！！！用户名不可用';
+            };
+        });
+        // 文本框验证用户名用正则表达式，
+        // 1.写一个限制用户名输入数据类型的正则表达式
+        // 2.文本框失去焦点事件
+        // 3.if测试正则表达式，传输文本框的值进去，如果符合正则表达式true,则旁边提示文本改变为可用；否则旁边提示文本改变为不可用
+    </script>
+</body>
+
+</html>

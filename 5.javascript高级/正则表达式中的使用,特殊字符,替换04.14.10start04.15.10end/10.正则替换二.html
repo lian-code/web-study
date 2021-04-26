@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <input type="submit">
+    <div></div>
+    <script>
+        var text = document.querySelector('textarea');
+        var submit = document.querySelector('input');
+        var div = document.querySelector('div');
+        submit.addEventListener('click', function() {
+            var newValue = text.value.replace(/激情|gay|cnm/gi, '**'); //替换完之后返回新的字符串
+            div.innerHTML = newValue;
+        })
+    </script>
+</body>
+
+</html>
