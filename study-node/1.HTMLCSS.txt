@@ -1,0 +1,221 @@
+HTML 常用标签：
+标题标签：<h1></h1>
+
+段落标签：<p></p>
+
+换行标签：<br>
+
+图像标签：<img src="路径文件名"> 其他属性【alt(无图替换文本) title(放鼠标提示文本) border
+(边框粗细默认0)】
+
+超链接标签：<a href="链接地址" target="目标窗口弹出方式(_self默认 _blank空白新窗口)">文本或图像</a>
+----------------------------------------
+表格标签：<table>表格</table> <tr>行</tr> <td>单元格</td> <th>加粗单元格</th> 【正确包含关系：<table><tr><td(th)>文本</td(th)></tr></table>】
+<thead>头部</thead> <tbody>主体</tbody>
+表格属性：cellspadding单元边内容距离 cellspacing单元格距离默认2 align排列 border边框默认0 width宽度
+合并单元格：rowspan(跨行)="数字" colspan(跨列)="数字" 【保留上左，删除下右】
+----------------------------------------
+列表标签：(无序列表<ul> <li>小例</li> </ul>) (有序列表<ol> <li>小例</li> </ol>) (自定义列表<dl> <dt></dt> <dd></dd></dl>一个dt对应多个dd)
+----------------------------------------
+表单标签：<form action=“url地址” method=“提交方式” name=“表单域名称"> 各种表单元素控件 </form>
+表单元素：【都要包含在form表单域里面,并且有name 属性】
+1.(input输入表单元素:<input type="属性值"  />) 属性:button按钮 checkbox复选框 radio单选 reset重置 submit提交 
+                                                                                     image图像提交 text文本框 password密码框 hidden隐藏 file文件浏览 
+                                               name(input元素名称 单复选必命名相同) value值定义框中显示文字 checked="checked"定义单选复选直接选定 maxlength文本框最多字数
+2.(label标签:定义文本对应元素 <label for="sex">男</label>        <input type="radio" name="sex"  id="sex"/>)
+3.(select下拉(选择)标签:<select> <option>选项1</option><option>选项2</option> </select>)在option中定义selected =“selected "即默认选中
+4.(textarea文本域:<textarea>文本显示</textarea>) 【rows="行数" cols="列数"(后面用css修改)】
+——————————————————————————————————————————————————————————————————————
+CSS基础选择器：
+标签选择器：标签名 {属性1: 属性值1  属性2: 属性名2}
+类选择器：.类名 {属性1: 属性值1  属性2: 属性名2}     body写 class="类名"
+id选择器：#id名名 {属性1:属性值1  属性2:属性值2}      body写 id="id名" 【唯一性】
+通配符选择器：* {属性1:属性值1  属性2:属性值2} 
+
+
+CSS字体font属性：
+字体样式：font-style(normal(正常) italic(倾斜))
+字体粗细：font-weight(400 700)  
+字体大小：font-size(16px)  
+字体行距：line-height(26px)  
+字体系列：font-family(microsoft yahei)
+
+
+CSS文本text属性：
+颜色：color(#666666)
+对齐文本：text-align(left right center)
+装饰文本：text-decoration(none没有一个 underline下划线 overline上划线 line-through划掉 )
+文本缩进：text-indent(16px em【一个单位字节】)
+文本行间距：line-height(26px)
+ ——————————————————————————————————————————————————————————
+CSS复合选择器：
+后代选择器：<ul>                子选择器：<ul>                                      并集选择器：<p></p>              
+                        <li></li>                             <li><p></p></li>                              <div></div>        
+                     </ul>                                      <p></p>                        则：p,div {color: pink;} 
+则：ul li { color: pink;}                             </ul>
+                                             则：ul>p { color: pink;}
+
+链接伪类选择器：<a href="www.baidu.com">百度</a>            focus伪类选择器：<input type="text">
+则：a {color: black:}a:hover {color: pink;}                                                             则：input:focus {background-color: pink;}
+
+
+元素显示模式：
+块元素：例如<div><p><h1><ul><ol><li>
+行内元素：例如<span><a><b>  【高宽不能直接设置】
+行内块元素：<img><td><input>
+元素显示模式转换：
+转块元素：display:block;
+转行内元素：display:inline;
+转行内块元素：display:inline-block;
+
+让文本在盒子垂直居中的小技巧：行高(line-height)等于盒子高度
+
+CSS的背景：
+背景颜色：background-color : ;
+背景图片：background-image : none(没有) | url (url);
+背景平铺(重复)：background-repeat: repeat | no-repeat | repeat-x | repeat-y ;
+背景图像固定(附件)：background-attachment: scroll(默认滚动) fixed(固定);
+背景图片位置：background-position: x y;  2px 3px; bottom center;
+背景复合写法： background: 背景颜色 背景图片 背景平铺 背景图像固定 背景图片位置;
+背景半黑透明：background: rgba(0, 0, 0, 0.3);【0是黑色】
+背景半白透明：background: rgbd(255,255,255,0.3);【255是白色】
+CSS透明：opacity: 1;(0到1,0完全透明，1完全不透明)
+
+——————————————————————————————————————————————————————————
+
+CSS盒子模型：
+盒子模型包括：border(边框) padding(内边距【字体跟边框的距离】) margin(外边距) 内容(content)
+
+border：boeder-weight(粗细) border-style(样式) border-color
+border:1px solid red;
+border-style：solid(实线) dashed([虚线) dotted(点线)
+表格细线边框：border-collapse:collapse;【写这一句就可以边框合并】
+圆角边框：border-radius:(正方形设置50%即为圆 长方形可设置宽度的50% 单位为px)
+
+padding：padding-top padding-right padding-bottomn padding-left 
+padding:5px(上下左右5像素) 
+padding:5px 10px(上下5像素 左右10像素)
+padding:5px 10px 20px(上5像素 左右10像素 下20像素)
+padding:5px 10px 20px 30px(上5像素 右10像素 下20像素 左30像素 顺时针)
+给有宽度的盒子加内边距会撑大盒子，没有宽度则不会。
+
+margin（与内边距同理）
+margin可让块级盒子水平居中：1.必须有宽度(width) 2.设置左右外边距为auto
+div {width:500px; margin:0 auto;}
+给父元素添加overflow:hidden可让嵌套关系都有外边距时不塌陷
+浮动的盒子给内边距不会有塌陷的问题。
+
+清除内外边距：
+* {
+ padding:0; /* 清除内边距 */
+ margin:0; /* 清除外边距 */
+ }
+
+去掉小li中的实心圆点：li {list-style: none;}
+
+盒子阴影：
+box-shadow: h-shadow(水平位置) v-shadow(垂直位置) blur(模糊度数) spread(阴影大小) color(颜色) 
+box-shadow: 0 1px 3px 2px rgba(0,0,0,0.1);
+
+文字阴影： 
+text-shadow：h-shadow(水平位置 右) v-shadow(垂直位置 下) blur(模糊度数) color
+text-shadow:2px 5px 10px gray;
+
+——————————————————————————————————————————————————————————
+CSS浮动：【任何元素都可以浮动，浮动后都具有行内块元素的特征】
+float语法：选择器 { float: 属性值（none left right）; }
+
+清除浮动：当子元素浮动了，父元素没设置高度，则需要清除浮动，否则浮动子元素会盖住下面布局。
+1.额外标签法：在子元素最后添加<div style="clear:both"></div>
+2.在父元素CSS中添加 overflow:hidden （缺点是显示不出溢出的内容）
+3.父级添加after伪元素：
+4.父级添加双伪元素：
+
+----------------------------------------------
+定位则是可以让盒子自由的在某个盒子内移动位置或者固定屏幕中某个位置，并且可以压住其他盒子【子绝父相要记住！！】
+定位 = 定位模式 + 边偏移 。（position=relative; top=10px; left=10px;）
+ position: 【（定位模式）static静态 relative相对 absolute绝对 fixed固定】【（边偏移）top bottom left right】
+relative: 给绝对定位当爹的 不脱标 边偏移是相对于自己位置来说的。
+absolute:  脱标 边偏移是相对于它祖先元素来说的（拼爹型）。
+fixed:  脱标 固定定位是元素固定于浏览器可视区的位置 不随滚动条滚动。
+固定定位小技巧： 固定在版心右侧位置。（先left: 50% 再margin-left:版心的一半宽度）
+
+__________________________________________________________________________________________________________________________________________
+css高级技巧：
+1. css三角： 定义一个盒子(weight:0; hight:0; 随意给边框border:10px solid transparent; 想要角向上 即可给border-bottom-color:red;)(如给盒子运用，即可用定位，父元素relative,子元素absolute.)
+2. 字体图标： 复制icomoon中html文件图标后面小方框（就是源字体图片），复制icomoon 中的样式声明，给字体图标定义样式字体风格，
+. 鼠标样式：cursor: pointer(小手);
+3. 表单文本框去掉轮廓线： input {outline:none;}  文本域防止拖拽：textarea {resize:none;}
+4. 图片文本框文字对齐：（只能是行内，行内块元素）img {vertical:middle;} 有顶线中线底线基线 top middle baseline bottom
+5. 去掉图片底部空白缝隙：   转换成块即元素(不建议，会占用一整行)。 图片添加vertical-align:middle;
+6. 溢出的文字省略号显示：【1. 单行文本溢出显示省略号：先强制不换行white-space:nowrap;再去除溢出overflow:hidden; 再添加省略号text-overflow:ellipsis;】
+
+7. 常见布局技巧：
+1.margin负值的运用：float并列的两个盒子边框会挤成1+1=2的边框，可以给盒子加margin-left:-1;即可变成细线边框。（鼠标经过边框变色可以给大盒子添加相对定位position:relative 再给小盒子加z-index:1;）
+2.文字围绕图片：给图片加浮动即可，文字会围绕浮动的图片，再给图片加margin-left:5px;挤开文字图片距离。
+3.导航栏巧用行内块：运用text-align:center给盒子居中，行内块之间会有一段距离，减少使用margin拉开盒子之间的距离。
+4.CSS直角三角形：先盒子width:0;higth:0;再border: 0 solid transparent; border-top-width:100px; boeder-right:50px solid red;
+
+————————————————————————————————————————————————————————————
+06-HTML5 和 CSS3 的新特性
+
+1. HTML5 的新特性：
+
+1.1  HTML5 新增的语义化标签
+    <header>：头部标签
+ <nav>：导航标签
+ <article>：内容标签 (内容)
+ <section>：定义文档某个区域 (部分)
+ <aside>：侧边栏标签 (在旁边)
+ <footer>：尾部标签
+
+1.2 HTML5 新增的多媒体标签
+1.2.1 视频：<video>
+     autoplay="autoplay" (自动播放视频)
+     muted="muted" (静音) (谷歌浏览器要加此标签才能自动播放视频)
+     loop="loop" (循环播放视频)
+     poster="img地址" (视频未播放前加载的图片) (海报)
+1.2.2 音频<audio>
+      autoplay="autoplay" (自动播放音频)
+      loop="loop" (循环播放音频)
+      controls="controls"(播放控件)
+      谷歌浏览器把自动播放音频关掉了，添加muted也没用，因为这是音频文件，后边用js来调节。
+
+1.3 HTML5 新增的 input 类型
+      type="search" 搜索框
+      type="tel" 手机号
+      type="number" 数字
+      type="date" 日期
+      type="email" 邮箱
+
+1.4 HTML5 新增的表单属性
+      placeholder="提示文本" （占位文字） 修改placeholder里面的字体颜色：input::placeholder {color: pink;}
+      multiple="multiple" （多种多样的）
+      required="required" （必须填）
+      autofocus="autofocus" （自动焦距）
+      autocomplete="off/on"（自动完成 自动补全）默认打开 必须给搜索框添加name
+
+2. CSS3 的新特性
+
+2.1 CSS3 新增选择器
+2.1.1 属性选择器：<input type="txet"> 
+选择同个元素不同属性：input[type]
+选择同个属性不同属性值：input[type="text"]
+选择同个属性值开头：input[type^="t"]
+选择同个属性值结尾：input[type$="e"]
+选择属性值中有同个字符：input[type*="t"]
+
+2.1.2 结构选择器：<ul><li></li><li></li></ul>
+先序列后元素：ul li:nth-child(n) { css }
+先元素后序列：ul li:nth-of-type(n) { css }
+
+2.1.3 伪元素选择器：
+2.1.3.1伪元素选择器  (在前面添加)::before      (在后面添加)::after【必须添加content: '';】
+2.1.3.2仿土豆效果
+2.1.3.3伪元素清除浮动
+
+图片变模糊：滤镜filter
+计算盒子宽度 width: calc 函数
+过渡（transition) 经常和 :hover 一起 搭配使用。
+
+——————————————————————————————————————————————————————————

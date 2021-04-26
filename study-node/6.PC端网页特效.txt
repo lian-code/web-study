@@ -1,0 +1,21 @@
+元素偏移量offset系列：只读不写 写用style;
+       element.offsetTop      元素距带有定位的父元素的上方距离；
+       element.offsetLeft      元素距带有定位的父元素的左距离；
+       element.offsetWidth      元素的宽度，包括padding值，边距；
+       element.offsetHeight      元素的高度，包括padding值，边距；
+
+元素可视区client系列：
+       element.clientTop     元素上边框长度；
+       element.clientLeft     元素左边框长度；
+       element.clientWidth     元素的宽度，不包括边框；
+       element.clientHeight     元素的高度，不包括边框；
+
+元素滚动scroll系列：
+        window.scroll(x,y);     x,y不带px单位;滚动到页面指定位置。配合动画函数跟pageYoffset使用.
+        element.scrollTop;    返回元素被卷去的上侧距离；
+        element.scrollLeft;    返回元素被卷去的左侧距离；
+        element.scrollWidth;    元素的宽度，不包括边框；
+        element.scrollHeight;   元素的高度，不包括边框；
+        整个页面被卷去的长度：1.头部：window.pageYOffset     2.左侧：window.pageXOffset;
+        
+        

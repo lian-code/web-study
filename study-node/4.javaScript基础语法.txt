@@ -1,0 +1,147 @@
+==============第一天 start
+输入输出语句：pormpt()输入框 alert()警示框 console.log()控制台打印输出
+变量：var age = 18; var 标识符 = 变量值; 【多个变量：var  age = 18,sex = '男';】
+简单数据类型：Number数字型 Boolean布尔型 String字符串型 Undefined未定义 Null空值
+数字型：【进制：八进制在前面加0 十六进制在前面加0x 】【范围：最大值alert(Number.MAX_VALUE); // 1.7976931348623157e+308
+最小值alert(Number.MIN_VALUE); // 5e-324
+】【特殊值：infinity无穷大 -infinity无穷小 NaN(Not a number)非数值】【isNaN 判断是否数字 是返回false 否返回true】
+字符型：【字符串转义符：\n换行符  \t缩进tab  \b空格  \\斜杠\  \'单引号  \"双引号  】【长度：length属性str.length】【拼接：字符串＋任何类型】【字符串变量拼接：变量不能加引号】
+布尔型：【true false】
+获取变量数据类型：console.log(typeof 变量/数据)
+字面量
+数据类型转换：
+转换为字符串：【加号拼接字符串(隐式转换)：console.log(typeof (1 + ''));】【String()强制转换：console.log(typeof (String(变量)));】【toString()：console.log(typeof (num.toString()));】
+转换为数字型：【parseInt(string)转为整数数值型】【parseFloat(string)转为浮点数数值型】【Number(string)强制转换】【js隐式转换(-减*乘/除)利用算术运算隐式转换为数值型】
+转换为布尔型：【Boolean('true')】代表空、否定的值会被转换为 false  ，如 ''、0、NaN、null、undefined 
+==============第一天 end
+
+==============第二天 start
+06-JavaScript操作符.pdf
+1. 算术运算符：【+加 -减 *乘 /除 %取余】
+2.【表达式：num = 1+1;】【返回值：console.log(num);】
+3. 递增递减运算符：【前置递增：++num (等于num = num + 1);先自加1，再返回值】 【后置递增：num++ (等于num = num + 1);先返回原值，再自加1 】 【必须配合变量使用】
+4. 比较运算符：【<小于号  >大于号  <=小于等于  >=大于等于  ==等于号(不同数据会自动转型为同等数据)  !=不等于号  ===全等于号   !==全不等于号(值跟数据类型都一致)   】
+5. 逻辑运算符：【&&逻辑与(两侧true才true)  ||逻辑非(两侧false才false)  !逻辑非(取反)】【逻辑与短路：如果第一个表达式的值为真，则返回表达式2。如果第一个表达式的值为假，则返回表达式1
+】【逻辑或短路：如果第一个表达式的值为真，则返回表达式1。如果第一个表达式的值为假，则返回表达式2】(0 '' NaN undefined null 为假)
+6. 赋值运算符：例子表达式var num = 10;【=   右边赋值给左边 】【num += 1;(num = num + 1;) +=  -=  *=  /=  %= 】
+7. 运算符优先级：【1.小括号：()】【2.一元运算符：++ -- !】【3.算术运算符：先*/% 后+-】【4.关系运算符：> < >= <=】【5.相等运算符：==  !=  ===  !==】【6.逻辑运算符：先&& 后||】【7.赋值运算符：=】【8.逗号运算符：,】
+-----------------------------
+07-JavaScript流程控制-分支.pdf
+1. 流程控制：【顺序结构：从上往下】【分支结构：条件执行判断执行A还是B】【循环执行：A 判断yes继续返回执行，no结束执行】
+2. 分支流程控制 if 语句：
+if (1>2) { 
+	console.log('不会执行我') ;
+} else if (2>3) { 
+	console.log('不会执行我') ;
+} else if (3>4) {
+	console.log('不会执行我') ;
+ } else { 
+	console.log('执行我') ;
+}
+3. 分支流程控制 switch 语句：【开发中表达式经常写变量。num与case里的值匹配时必须是全等。如果当前的case中没有break，则不会退出switch，而是继续执行下一个case。】
+var num = 10;
+switch (num) {
+	case 8:
+		console.log('不会执行我');
+		break;
+	case 10:
+		console.log('执行我');
+		break;
+	case 11:
+		console.log('不会执行我');
+		break;	
+}
+4. 三元表达式：【判断式 ？ 表达式1 ：表达式2；】【判断式为true则输出表达式1，false则输出表达式2】【var num = 4 > 3 ? 10 : 11;(则num为10)】
+==============第二天 end
+
+==============第三天 start
+08-JavaScript流程控制-循环.pdf
+1. 循环：for循环   while循环   do while循环
+2. for循环：for (初始化变量; 条件表达式; 操作表达式 ) {
+		 //循环体 }
+3. 双重for循环：for (初始化变量; 条件表达式; 操作表达式 ) { //外循环控制行
+		 for (初始化变量; 条件表达式; 操作表达式 ) { //内循环控制列
+		 //循环体 }
+		}
+4. while循环：var i = 1,num = 0; //打印1-100累加
+	       while (i <= 100) {
+			num += i;
+			i++;
+		}
+	        console.log(num);
+5. do while 循环：do { //先执行一次循环体代码
+		// 循环体代码 - 条件表达式为 true 时重复执行循环体代码 
+	              } while(条件表达式);
+6. continue：【continue 关键字用于立即跳出本次循环，继续下一次循环】
+7. break：【break 关键字用于立即跳出整个循环（循环结束）】
+==============第三天 end
+
+==============第六天 start
+15-JavaScript内置对象.pdf
+1.Math对象
+ Math.PI 圆周率
+ Math.max()/Math.min() 求最大值跟最小值
+ Math.floor() 向下取整
+ Math.ceil() 向上取整
+ Math.round() 四舍五入，注意-3.5 取-3
+ Math.abs() 绝对值
+ Math.random 返回 [0,1) 中的随机小数
+    得到两个数中的随机整数包括两个数在内，getRandom的函数：
+    function getRandom(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+2.Daet日期对象
+ 使用Date对象必须要实例化: var now = new Date();
+  日期格式化：
+  变量.getFullyear() 获取当年
+  变量.getMonth() + 1 获取当月,只有11月，要加1.
+  变量.getDate() 获取当天
+  变量.getDay() 获取星期（周日0-周六6）
+  变量.getHours() 获取小时
+  变量.getMinutes() 获取分钟
+  变量.getseconds() 获取秒数
+  var nowSeconds = + new Date(); consold.log(nowSeconds); 直接获取距1970-01-01以来的毫秒数
+  变量.getTime() 实例化后获取距1970-01-01以来的毫秒数。毫秒转为秒 /1000;
+     倒计时时间转化公式：
+     天 = parseInt(总秒数/60/60/24);
+     时 = parseInt(总秒数/60/60%24);
+     分 = parseInt(总秒数/60%60);
+     秒 = parseInt(总秒数%60);
+
+3.数组对象
+ 检测是否为数组：1.console.log(变量 instanceof Array);    2..console.log(Array.isArray(变量));
+    添加删除数组元素的方法: 
+    变量.push() 在数组最后一个添加元素，返回变量的length;
+    变量.pop() 删除数组最后一个元素，返回删除的元素;
+    变量.unshift() 在数组最前面添加元素，返回变量的length;
+    变量.shift() 删除数组第一个元素，返回删除的元素;
+    变量.splice(start,number) 删除输入的数组元素，返回删除的数组元素，改变原数组。 
+ 数组排序：
+ 变量.reverse(); 颠倒数组的顺序,返回新的数组；
+ 变量.sort(); 按大小排序数组，不准确，包装一个新的函数使用。返回新数组。
+          arr.sort(function(a, b) {
+            return a - b; 升序
+            return b - a; 降序
+        })
+     数组元素查找索引号：
+     变量.indexOf('元素',start) 返回数组中该元素第一个索引号，查找不到返回-1;
+     变量.lastIndexOf('元素',start)) 返回数组中该元素最后一个索引号，查找不到返回-1;
+ 数组转字符串：
+ 变量.toString(); 返回一串带逗号的字符串；
+ 变量.join('分隔符');返回一串带分隔符的字符串；
+变量.concat(new Array);返回连接的新数组，不影响旧数组；
+
+4.字符串对象
+ 字符串元素查找索引号：
+      变量.indexOf('元素',start)) 返回数组中该元素第一个索引号，查找不到返回-1;
+     变量.lastIndexOf('元素',start)) 返回数组中该元素最后一个索引号，查找不到返回-1;
+ 字符串索引号返回字符：
+    charAt(index); 返回指定索引号的字符。
+    charCodeAt(index); 返回指定索引号的字符的ASCII码；
+     变量[index]; 返回指定索引号的字符。
+ 字符串操作方法：
+   变量.concat() 连接两个或者多个成新的字符串；
+   变量.substr(start,number) 截取字符串中的字符.
+   变量.replace(被替换的字符，要替换的字符)；返回新替换的字符串，不更改元字符串
+   变量.split();字符串改为数组，返回新的数组
+
+==============第六天 end

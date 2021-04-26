@@ -1,0 +1,8 @@
+06-移动端网页特效.pdfx
+1.触屏事件：touchstart手指触摸  touchend手指离开   touchmove手指移动；
+2.触屏事件对象：touches(正在触摸屏幕的所有手指列表)  ；
+                           tergetTouches(正在触摸DOM元素的列表)；
+                           changedTouches(手指状态发生改变的列表，从无到有，有到无)；
+3.classList 属性：添加类：element.classList.add('current');  （类名不带点）；
+                           删除类：element.classList.remove('current');
+                  

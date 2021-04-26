@@ -1,0 +1,6 @@
+window.sessionStorage  会议储存5M（页面关闭数据丢失）；
+window.localStorage   本地储存20M（储存在浏览器，不同页面标签页都可以用）；
+储存数据：sessionStorage.setItem('ket','value');
+得到数据：sessionStorage.getItem('key');
+移除数据：sessionStorage.remove('key');
+清除所有数据：sessionStorage.clear();

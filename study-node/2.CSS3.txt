@@ -1,0 +1,98 @@
+【CSS3：属性选择器。结构伪类选择器。伪元素选择器。2D转换。动画。3D转换。浏览器私有前缀】
+=============================
+一. 属性选择器：【类选择器、属性选择器、伪类选择器，权重为 10】
+【E[att] 选择具有att属性的E元素
+   E[att="val"] 选择具有att属性且属性值等于val的E元素
+   E[att^="val"] 匹配具有att属性、且值以val开头的E元素
+   E[att$="val"] 匹配具有att属性、且值以val结尾的E元素
+   E[att*="val"] 匹配具有att属性、且值中含有val的E元素】
+=============================
+二.  结构伪类选择器：
+【E:first-child 匹配父元素中的第一个子元素E 
+   E:last-child 匹配父元素中最后一个E元素
+   E:nth-child(n) 匹配父元素中的第n个子元素E 
+   E:first-of-type 指定类型E的第一个
+   E:last-of-type 指定类型E的最后一个
+   E:nth-of-type(n) 指定类型E的第n个】
+【n可以是数字，关键字和公式
+ n如果是数字，就是选择第n个  常见的关键词 even 偶数 odd 奇数
+ 常见的公式如下 ( 如果n是公式，则从0开始计算）
+ 但是 第0个元素或者超出了元素的个数会被忽略 )】
+【2n 偶数
+   2n+1 奇数
+   5n 5 10 15 ...
+   n+5 从第5个开始（包含第五个）到最后
+   -n+5 前5个（包含第5个）...】
+=============================
+三.  伪元素选择器：
+【::before 在元素内部的前面插入内容
+   ::after 在元素内部的后面插入内容】
+【before 和 after 必须有 content 属性
+ before 在内容的前面，after 在内容的后面
+ before 和 after 创建一个元素，但是属于行内元素。
+ 因为在 dom 里面看不见刚才创建的元素，所以我们称为伪元素
+ 伪元素和标签选择器一样，权重为 1】
+=============================
+四. CSS3 2D转换transform：
+1. 【移动translate】【旋转rotate】【缩放scale】
+2. 移动translate：【语法：transform: translate(x,y) 分开写：transform: translateX(n)  transform: translateY(n)】【translate最大的优点：不会影响到其他元素的位置translate中的百分比单位是相对于自身元素的 translate:(50%,50%);】
+3. 旋转rotate：【语法：transform: rotate(度数deg)】【角度为正时，顺时针，负时，为逆时针默认旋转的中心点是元素的中心点】
+3. 缩放scale：【语法：transform: scale(倍数,倍数)】【transform:scale(2) ：只写一个参数，第二个参数则和第一个参数一样，相当于 scale(2,2)。transform:scale(0.5,0.5)：缩小sacle缩放最大的优势：可以设置转换中心点缩放，默认以中心点缩放的，而且不影响其他盒子】
+4. 2D转换中心点：【语法：transform-origin: 10px 10px】【注意后面的参数 x 和 y 用空格隔开。x y 默认转换的中心点是元素的中心点 (50% 50%)。还可以给x y 设置 像素 或者 方位名词 （top bottom left right center）】
+5.  2D 转换综合写法
+【1. 同时使用多个转换，其格式为：transform: translate() rotate() scale() ...等，
+2. 其顺序会影转换的效果。（先旋转会改变坐标轴方向）
+3. 当我们同时有位移和其他属性的时候，记得要将位移放到最前】
+=============================
+五. CSS 动画animation：【1.先定义动画 2.再使用（调用）动画】
+1. 定义动画
+@keyframes 动画名称 {
+ 	0%{
+		 width:100px;
+	 } 
+ 	100%{
+ 		width:200px;
+ 	}
+}
+2.  元素使用动画：
+【animation：animation-name动画名称。 animation-duration持续时间,默认0。 animation-timing-function运动曲线,默认ease。animation-delay何时开始,默认是0。 
+   animation-iteration-count播放次数,默认是1,还有infinite。 animation-direction是否反方向,默认是“normal“,alternate逆播放。 animation-fill-mode规定动画结束后状态,保持forwards回到起始backwards】
+   例如：【animation: myfirst 5s linear(匀速) 2s infinite(循环) alternate;】
+【linear动画从头到尾的速度是相同的匀速。 ease默认动画以低速开始,然后加快,在结束前变慢。 steps()指定了时间函数中的间隔数量(步长)。】
+   还有animation-play-state 规定动画是否正在运行或暂停。默认是"running",还有"paused"。
+【简写属性里面不包含 animation-play-state。 暂停动画：animation-play-state: puased; 经常和鼠标经过等其他配合使用。  想要动画走回来 ，而不是直接跳回来：animation-direction ： alternate。  盒子动画结束后，停在结束位置： animation-fill-mode ： forwards】
+=============================
+六. CSS3 3D转换：【1. 三维坐标系 2.3D位移: translate3d(x,y,z) 3.3D旋转: rotate3d(x,y,z) 4.透视:perspective 5.3D呈现:transfrom-style】
+\\\\\\\【透视perspective 3D呈现transfrom-style 过渡transition必须加】\\\\\\
+1. 三维坐标系：
+【x轴：水平向右 注意： x 右边是正值，左边是负值。
+y轴：垂直向下 注意： y 下面是正值，上面是负值。
+z轴：垂直屏幕 注意： 往外面是正值，往里面是负值。】
+2. 3D移动 translate3d：
+【3D移动在2D移动的基础上多加了一个可以移动的方向，就是z轴方向。
+   translform:translateZ(100px)：父级有透视perspective，才能看到translateZ引起的变化。仅仅是在Z轴上移动（注意：translateZ一般用px单位）
+   因为z轴是垂直屏幕，由里指向外面，所以默认是看不到元素在z轴的方向上移动】
+3.  透视 perspective: 500px;
+【透视写在被观察元素的父盒子上面的】
+4. 3D旋转 rotate3d：
+【transform:rotateX(45deg)：沿着x轴正方向旋转 45度  
+   transform:rotateY(45deg) ：沿着y轴正方向旋转 45deg
+   transform:rotateZ(45deg) ：沿着Z轴正方向旋转 45deg
+   transform:rotate3d(x,y,z,deg)： 沿着自定义轴旋转 deg为角度（了解即可）】
+5. 3D呈现 transfrom-style：
+【控制子元素是否开启三维立体环境。。
+   transform-style: flat 子元素不开启3d立体空间 默认的
+   transform-style: preserve-3d; 子元素开启立体空间
+   代码写给父级，但是影响的是子盒子
+   这个属性很重要，后面必用】
+===================
+七. 浏览器私有前缀：
+【-moz-：代表 firefox 浏览器私有属性
+ -ms-：代表 ie 浏览器私有属性
+ -webkit-：代表 safari、chrome 私有属性
+ -o-：代表 Opera 私有属性】
+【提倡的写法
+   -moz-border-radius: 10px; 
+   -webkit-border-radius: 10px; 
+   -o-border-radius: 10px; 
+   border-radius: 10px;】

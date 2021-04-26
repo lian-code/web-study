@@ -1,0 +1,107 @@
+&&jQuery对象跟DOM对象：
+ 1.DOM对象转为jQuery对象：$("div");
+ 2.jQuery对象转为DOM对象：$("div")[index];  或者  $("div").get[index];       (jQuery对象是以数组存在的)
+
+&&jQuery选择器筛选方法：
+ 1.语法 parent()	用法 $("li").parent()      查找亲爸爸
+ 2.语法 parents()	用法 $("li").parents("element")     查找父级元素
+ 3.语法 children()	用法$("ul").children("element")	查找亲儿子
+ 4.语法 find()	用法$("ul").find("element")	查找子级元素
+ 5.语法 siblings()	用法$("ul").siblings("element")	查找兄弟元素
+ 6.语法 eq(index)	用法$("li").eq(4)	查找li元素中索引号为4的元素
+ 7.链式编程 $(this).css("background","red").siblings().css("background",""); 设置当前背景为红色，当前的所有兄弟背景为空。
+
+&&jQuery样式操作：
+ 1.操作css方法：
+	1.1 获取样式属性值：$(this).css("color");
+	1.2 设置样式属性值：$(this).css("color","red");
+	1.3 设置多个属性：$(this).css({color:"red" , background:"pink"});
+ 2.设置类名操作：(类名不加点，不覆盖原来的类名)
+	2.1 添加类名：$(this).addClass("current");
+	2.2 移除类名：$(this).removeClass("current");
+	2.3 切换类名：$(this).toggleClass("current");
+
+&&jQuery效果：(都有多个参数，一般不用设置，偶尔使用里边回调函数function() {},即效果结束执行)
+ *.stop();		停止先前效果动画方法，写在动画效果前面，即每次调用效果先停止之前的效果，解决短时间多次调用执行效果。
+ 1.show();		显示
+ 2.hide();		隐藏
+ 3.toggle();	切换显示隐藏
+ 4.fadeIn();	渐入
+ 5.fadeOut();	渐出
+ 6.fadeToggle();	渐入渐出切换
+ 7.fadeTo(speed,opacity);	多长时间变化元素透明度fadeTo(1000,0.5); 一秒逐渐改变元素的透明度
+ 8.slideDown();	下滑
+ 9.slideUp();	上滑
+ 10.slideToggle();	切换下滑上滑
+ 11.hover(mouseenter函数，mouseleave函数);		鼠标移入移除执行函数方法
+ 12.animate({})	动画函数，如$("div").animate({width : "100px"});就是有动画的把div变为宽100px;
+
+&&属性操作：
+ 1.获取元素固有属性值：prop("property");   设置元素元素固有属性值：prop("property","value");@@@
+ 2.获取元素自定义属性值：attr("attribute");   设置元素固有属性值：attr("attribute","value");@@@
+ 3.数据缓存，不在DOM中显示：获取：data("property");      设置：data("property","value");
+ 4.获取H5自定义属性data-index：data("index");
+ 5. (:checked)选择器，查找被选中的表单元素。
+
+&&内容文本值：（设置内容是会覆盖原先内容的）；
+ 1.获取; 设置元素所有内容：html(); html("value");   （可以显示跟修改标签）；
+ 2.获取; 设置元素文本内容：text();  text("value");  
+ 3.获取; 设置表单值：val(); val("value");
+ 4.涉及课外方法：substr(从第几位数开始截取);截取字符串。               toFixed(保留几位小数);数字保留几位小数。
+
+&&元素操作：遍历，创建，添加，删除元素操作；
+ 1.遍历元素：语法：$("property").each(function(index,domment) {  content  });  （domment参数是DOM对象）;
+ 2.创建对象：$("<li></li>");
+ 3.添加对象：在对象内部后面添加element.append(content),前面添加element.prepend(content)；     （如果内容是jQuery对象，则不用加引号）
+                    在对象旁边后面添加element.after(content),后面添加element.before(content)；
+ 4.删除对象：element.remove()删除匹配的元素；element.empty()清空元素的内容；element.html("")清空元素的内容;
+
+&&尺寸,位置操作：
+ 1.获取尺寸：width()/height();    只算width/height;
+                    innerWidth()/innerHeight();      包括padding值；
+                    outerWidth()/outerHeight();      包括padding值border值；
+                    outerWidth(true)/outerHeight(true);        包括padding,border,margin值；
+   设置尺寸：innerWidth(600);       padding不变，600减去padding值，剩下的就是给width;
+                    outerWidth(700);       padding,border不变，700减去padding,border值，剩下的就是给width;、
+
+ 2.获取位置：offset();     返回元素相对文档的偏移距离；offset().top返回顶部；  offset().left()返回左边；
+                    position();        返回元素相对带有定位的父级元素的偏移距离；     同理position().Top;   position().Left;   注：不能设置位置；
+	    scrollTop();         返回元素被卷去的头部;
+	    scrollLeft();          返回元素被卷去的左侧；、
+  设置位置：offset();       offset({ top:10   left:20});    括号加参数，参数为对象；
+                   scrollTop();     scrollTop(10);括号为数字则设置元素被卷去的距离；
+                   scrollLeft();    scrollLeft(20);括号为数字则设置元素被卷去的距离；
+  scroll返回卷去头部距离太为生硬，所以用animate({scrollTop:10})方法为好,这样设置过渡较为顺滑；animate只能为元素设置动画；
+
+——————————————————————————————————————————————
+
+jQuery事件
+
+&&jQuery事件注册： 1.单个事件注册：$("div").click(function() {事件处理程序});
+
+&&jQuery事件处理程序：（on()方法可以给动态生成的元素添加注册事件）
+ 1.1.一个元素多个事件处理程序：$("div").on({mouseneter : function() {事件处理程序} , mouseleave : function() {事件处理程序}});
+ 1.2.一个元素多个事件一个事件处理程序：$("div").on("mouseenter click",function() {事件处理程序})；
+ 1.3.事件委托：$("ul").on("click","li",function() {事件处理程序})；
+ 2.1.解绑on()方法绑定的事件：$("div").off();
+ 2.2.解绑单一事件：$("div").off("clikc");
+ 2.3.解绑事件委托事件：$("ul").off("click","li");
+ 3.1.一次性事件注册：one()方法；
+ 4.1.自动触发事件一：$("div").click();
+ 4.2.自动触发事件二：$("div").trigger("click");
+ 4.3.自动触发事件三：$("input").triggerHandler("focus")；     中译(触发事件处理程序)。不会触发元素的默认行为，比如获得焦点，光标不会在文本框中闪烁。    
+
+&&jQuery事件对象：element.on("click",function(event) {}); 阻止事件冒泡：event.stopPropagation();   阻止默认行为：event.preventDefault()   或者 return false;
+
+————————————————————————————————————————
+
+jQuery其他方法：
+
+&&jQuery拷贝对象：
+ $.extend([deep],target,object1,[object2]);
+  1.deep：true为深拷贝；false或者空为浅拷贝。（可选）
+  2.target：需要拷贝的对象。（必选）
+  3.object1：被拷贝对象1。（必选）
+  4.object2：被拷贝对象2。（可选）
+  5.浅拷贝是完全复制被拷贝对象的简单数据但只复制复杂数据的地址给目标对象。所以改变目标对象复杂数据是会同步改变被拷贝对象的。
+  6.深拷贝是完全复制被拷贝对象的简单数据跟复杂数据给目标对象。所以改变目标对象简单或者复杂数据是不会改变被拷贝对象的。
