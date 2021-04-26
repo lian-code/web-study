@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加数组求偶数和方法</title>
+</head>
+
+<body>
+    <script>
+        // 给数组添加内置方法就是给实例对象用的，实例对象就是this;
+        Array.prototype.evenNum = function() {
+            let num = 0;
+            this.forEach(function(value) {
+                if (value % 2 == 0) { //说明是偶数
+                    num += value;
+                }
+            });
+            return num;
+        };
+        console.dir(Array.prototype); //打印Array数组的方法
+        let arr = new Array(1, 2, 3, 4); //实例对象
+        let arr1 = [8, 9, 10, 11]; //实例对象
+        console.log(arr.evenNum()); //6
+        console.log(arr1.evenNum()); //18
+        console.dir(Object.prototype);
+        let obj = {
+            uname: '连浩伟',
+        };
+        console.log(obj.valueOf());
+        console.log(obj);
+        console.log(arr.valueOf());
+        console.log(arr);
+    </script>
+</body>
+
+</html>

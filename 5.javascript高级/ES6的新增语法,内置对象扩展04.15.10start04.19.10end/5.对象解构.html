@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.对象解构第一种写法
+        let obj = {
+            name: '连浩伟',
+            age: 20,
+        };
+        let { //变量的名字与属性的名字一一对应
+            name,
+            age
+        } = obj;
+        console.log(name); //等于obj.name
+        console.log(age); //等于obj.age
+
+        // 2.对象解构第二种写法，支持使用自定义变量解构对象
+        let obj1 = {
+            name: '周婵利',
+            age: 52,
+        };
+        let {
+            name: myname,
+            age: mayage
+        } = obj1;
+        console.log(myname); //周婵利
+        console.log(myage); //52
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Father {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            fn() {
+                return this.name + this.age;
+            }
+        };
+        // 儿子继承父亲
+        // class Son extends Father {
+
+        // };
+        // // 子类中无此方法，则直接调用父类方法
+        // var son1 = new Son("zjj", 09);
+        // console.log(son1.fn());
+
+
+        // class Son extends Father {
+        //     fn() {
+        //         return this.name;
+        //     }
+        // };
+        // // // 子类中有此方法，则使用子类方法
+        // var son1 = new Son("zjj", 09);
+        // console.log(son1.fn());
+
+        // 如果想使用父类方法，用super调用父类方法
+        class Son extends Father {
+            fn() {
+                return super.fn() + this.name;
+            }
+        };
+        var son1 = new Son("zjj", 09);
+        console.log(son1.fn());
+    </script>
+</body>
+
+</html>

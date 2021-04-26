@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建类
+        class Star {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            fn() {
+                return this.name + this.age;
+            }
+        };
+        // 创建对象
+        var ldh = new star("llll", 50);
+        console.log(ldh.name);
+        var gfc = new star("gggg", 51);
+        console.log(gfc.name);
+        console.log(ldh.fn());
+        console.log(gfc.fn());
+    </script>
+</body>
+
+</html>

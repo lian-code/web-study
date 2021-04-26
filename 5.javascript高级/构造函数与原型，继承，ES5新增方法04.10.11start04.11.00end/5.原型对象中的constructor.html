@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(name, age) {
+            this.uname = name;
+            this.uage = age;
+        };
+        // Star.prototype.sing = function() {
+        //     return '我在构造函数的原型对象中';
+        // }
+        // Star.prototype.dance = function() {
+        //     return '跳舞';
+        // }
+        var hg = new Star('胡歌', 100);
+        var zjl = new Star('周杰伦', 200);
+        // 构造函数中的原型对象prototype 跟 实例化对象中的对象的原型__proto__ 中都有constructor，用指向构造函数的，让人知道生成的数据或实例对象是哪个构造函数的
+        // 我想知道实例化对象hg是哪个构造函数生成的,这时：
+        console.log(Star.prototype.constructor); //显示Star构造函数
+        console.log(hg.__proto__.constructor);
+
+        // 但是如果我们在原型对象中添加对象类型数据，会把里边的constructor覆盖至消失如
+        Star.prototype = {
+            sing: function() {
+                return '我在构造函数的原型对象中';
+            },
+            dance: function() {
+                return '跳舞';
+            }
+        };
+        console.log(Star.prototype.constructor); //原型对象prototype中已经没有constructor属性
+        // 可以在prototype中对象中添加constructor属性 constructor: Star,
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            uname: '连浩伟'
+        };
+        // obj.age = 20; // 对象普通添加属性属性值
+        // console.log(obj);
+
+        // 用Object.defineProperty(对象，属性，{
+        //     value:'属性值',
+        // 译：可写的     writable: false/true 默认flase
+        // 译：可数的     enumerable:false/true   默认false
+        // 译：可配置的     configurable:false/true   默认false
+        // });
+        // Object.defineProperty()中特性全部默认为false,属性后续不能修改，不能被遍历得到，后续不能修改该属性特性，不能修改删除该属性
+        Object.defineProperty(obj, 'id', {
+            value: 1, //增加一个属性id,值为1
+        });
+        obj.id = 2; //修改不了
+        console.log(obj);
+        obj.sing = 'true';
+        console.log(obj.id);
+    </script>
+</body>
+
+</html>

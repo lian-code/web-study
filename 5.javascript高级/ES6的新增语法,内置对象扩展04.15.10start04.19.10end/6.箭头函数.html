@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.箭头函数中内容只有一行代码，并且作用为返回可以省略大括号跟return
+    2.箭头函数中只有一个参数，可以省略小括号
+    3.箭头函数不绑定自己的this,this指向定义位置中的this -->
+    <script>
+        // 1.普通函数箭头函数对比
+        // function fn(i) {
+        //     return i;
+        // };
+
+        // const fn = (i) => {
+        //     return i;
+        // } 
+
+        // -----------------------------
+
+        // 2.箭头函数中内容只有一行代码，并且作用为返回可以省略大括号跟return
+        // const fn = (i) => {
+        //     return i;
+        // }
+
+        // 可以写做：
+        // const fn = (i) => i;
+
+        // -----------------------------
+
+        // 3.箭头函数中只有一个参数，可以省略小括号
+        // const fn = (i) => {
+        //     return i;
+        // }
+
+        // 可以写做：
+        // const fn = i => {
+        //     return i;
+        // };
+
+        // -----------------------------
+
+        // 4.综上可以写做：
+        // const fn = i => i; //参数为i,返回i;
+        // alert(fn('ES6中新增的箭头函数简写'));
+
+        // 5.1.下面函数测试证明了普通函数在，this指向已经指明的函数中，本身的this指向也是依旧指向window的
+        // var obj = {};
+
+        // function fn() {
+        //     console.log(this);
+
+        //     function fnn() {
+        //         console.log(this);
+        //     }
+        //     return fnn();
+        // };
+        // fn.call(obj);//fn()中this指向obj,fnn()中this指向window
+
+        // 5.2.箭头函数不绑定自己的this,this指向定义位置中的this
+        var obj = {};
+
+        function fn() {
+            console.log(this);
+            const fnn = () => {
+                console.log(this)
+            };
+            return fnn();
+        };
+        fn.call(obj); //fn()中this指向obj,fnn()中this也指向obj
+    </script>
+
+</body>
+
+</html>

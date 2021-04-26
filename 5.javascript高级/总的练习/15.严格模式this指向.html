@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Father(name) {
+        //     console.log(this);
+        //     this.uname = name;
+        // };
+        // Father('lian');
+
+
+
+        function fn() {
+            "use strict";
+
+            function Father(name) {
+                console.log(this);
+                this.uname = name; //报错，因为构造函数中this指向undefined,给undefined添加属性肯定不行，会报错
+            };
+            Father('lian');
+        };
+        fn();
+    </script>
+</body>
+
+</html>

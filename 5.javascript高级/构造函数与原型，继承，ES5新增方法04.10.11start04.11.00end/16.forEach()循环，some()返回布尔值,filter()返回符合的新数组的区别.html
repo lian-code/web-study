@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [0, 9, 8, 7];
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (arr[i] == 9) {
+        //         console.log('普通循环找到了');
+        //         // continue;//中断
+        //         break; //退出
+        //     }
+        //     console.log(arr[i]);
+        // };
+
+        // arr.forEach(function(value, index, array) {
+        //     if (value == 9) {
+        //         return true; ///forEach()循环找到元素后用return,不管是false或true都会退出跳过本次循环，但还是会执行其他循环，类似普通循环中的continue
+        //     };
+        //     console.log(value);
+        // });
+
+        // arr.filter(function(value, index, array) {
+        //     if (value == 9) {
+        //         return false; //找到元素后用return,不管是false或true都会退出跳过本次循环，但还是会执行其他循环，类似普通循环中的continue 
+        //     };
+        //     console.log(value);
+        // });
+
+        arr.some(function(value, index, array) {
+            if (value == 9) {
+                return true;
+            };
+            console.log(value);
+        });
+    </script>
+</body>
+
+</html>

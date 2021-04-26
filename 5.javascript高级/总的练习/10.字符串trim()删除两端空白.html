@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.字符串trim()删除两端空白.html</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>按钮</button>
+    <script>
+        // 1.
+        // let str = ' jjj ';
+        // console.log(str);
+        // console.log(str.trim());
+        // 2.
+        // let str = ' ';
+        // console.log(str);
+        // console.log(str.trim());
+        let input = document.querySelector('input');
+        let button = document.querySelector('button');
+        button.addEventListener('click', () => {
+            if (input.value.trim() !== '') { //用trim()删除传递过来的字符串两端的空白。如果文本框输入空格键，也会被删除空白，就是传递过来是无字符串的
+                alert('不为空');
+            };
+        });
+    </script>
+</body>
+
+</html>

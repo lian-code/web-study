@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.可以拼接字符串
+        let str = 'kkk';
+        let strmode = `jjj${str}`; //输出jjjkkk
+        console.log(strmode);
+        // 2.浏览器可以输出原代码样式，没有换行就没有换行
+        let str1 = `<div>
+                            <span>${str}</span>
+
+                   </div>`;
+        console.log(str1);
+        // 输出<div>
+        //                     <span>kkk</span>
+
+        //     </div>
+
+        // 3.可以调用函数，输出函数返回值
+        const fn = () => 1;
+        let str2 = `${fn()}${str}`
+        console.log(str2); //输出1kkk
+    </script>
+</body>
+
+</html>

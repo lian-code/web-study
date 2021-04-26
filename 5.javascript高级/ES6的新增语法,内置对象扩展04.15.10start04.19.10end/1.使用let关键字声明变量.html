@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.let具有块级作用域，大括号中的let变量只能在大括号中使用
+        if (true) {
+            let cc = 88;
+            cc = 77;
+            console.log(cc);
+        }
+        if (true) {
+            var num = 10;
+            var num = 30; //只会覆盖，不会报错
+            console.log(num);
+        };
+        console.log(num);
+
+        if (true) {
+            let str = 20;
+            // str = 40;
+            // let str = 40;//报错
+            console.log(str);
+        };
+        // console.log(str); //获取不到，只会报错
+
+        // 2.let防止循环变量变成全局变量
+        for (var i = 0; i < 3; i++) {
+
+        };
+        console.log(i); //用var声明的循环变量  4
+
+        // for (let j = 0; j < 3; j++) {
+
+        // };
+        // console.log(j); //用let声明的循环变量  j获取不到
+
+        // 4.没有变量提升
+        // console.log(kk); //报错,没有提升kk这个变量
+        // let kk = 99;
+
+        console.log(jj); //使用var 会提升jj变量。输出undefined未定义
+        var jj = 88;
+
+
+        // 5. 使用let关键字声明变量具有暂时性死区特性
+        var mm = 44;
+        if (true) { //5.1未使用let
+            console.log(mm); //报错，暂时性死区
+            let mm = 66;
+        };
+    </script>
+</body>
+
+</html>

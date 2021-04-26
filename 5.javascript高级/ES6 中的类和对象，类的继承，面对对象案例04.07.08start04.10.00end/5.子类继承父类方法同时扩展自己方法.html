@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建类
+        // class Father {
+        //     constructor(name, age) {
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+        //     fn() {
+        //         return this.name + this.age;
+        //     }
+        // };
+        // // 子类继承
+        // class Son extends Father {
+        //     sonfn() {
+        //         return this.name - this.age;
+        //     }
+        // };
+        // var son1 = new Son(100, 100);
+        // console.log(son1.fn());
+        // console.log(son1.sonfn());
+        // 当子类没有constructor构造函数（默认方法）的时候，实例化子类可以使用父类的方法。反之，则不行
+
+        class Father {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            fn() {
+                return this.name + this.age;
+            }
+        };
+        // 子类继承
+        class Son extends Father {
+            constructor(name, age) {
+                // 用super关键词把参数传过去，在构造函数中要先传送参数，不然会报错
+                super(name, age);
+                this.name = name;
+                this.age = age;
+            }
+            sonfn() {
+                return this.name - this.age;
+            }
+        };
+        var son1 = new Son(100, 100);
+        console.log(son1.sonfn());
+        console.log(son1.fn());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.from()</title>
+</head>
+
+<body>
+    <script>
+        // 语法：Array.from(要转换为数组的对象，数组中每个元素要调用的函数)
+        // 用于把一个拥有length属性的对象转换为数组
+        var arrayLike = {
+            0: "张三",
+            1: "李四",
+            2: "王五",
+            length: 3
+        };
+        var objarr = Array.from(arrayLike, (value) => {
+            return value + 1;
+        });
+        console.log(objarr); //["张三1","李四1","王五1"]
+        console.log(objarr instanceof Array); //true
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Object.keys()获取所有属性名，返回一个所有属性名的对象.html
+        var obj = {
+            uname: '连浩伟',
+            age: 20,
+            sex: '男',
+            address: '汕头'
+        };
+        var propertyArr = Object.keys(obj);
+        console.log(propertyArr);
+        propertyArr.forEach(function(value, index, array) {
+            console.log(value);
+        })
+    </script>
+</body>
+
+</html>

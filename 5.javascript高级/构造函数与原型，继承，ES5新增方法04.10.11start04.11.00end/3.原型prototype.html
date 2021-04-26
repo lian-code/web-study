@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(name, age) {
+            this.uname = name;
+            this.uage = age;
+            // this.sing = function() {
+            //     console.log('唱歌');
+            // }
+        };
+        var hg = new Star('胡歌', 100);
+        var zjl = new Star('周杰伦', 200);
+        // 一样的方法直接放在构造函数里，不同实例化对象生成都会开辟新的内存空间
+        // console.log(hg.sing == zjl.sing); //false
+        // 2.构造函数中都有一个原型prototype,它是一个空间，可以吧一样的方法放在里边，这样每个实例化对象需要即调用，不在需要另外开辟空间了
+        Star.prototype.sing = function() {
+            console.log('唱歌');
+        };
+        console.log(hg.sing == zjl.sing); //true
+    </script>
+</body>
+
+</html>

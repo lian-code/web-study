@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set函数可以用来显示历史输入记录，因为他可以去重</title>
+</head>
+
+<body>
+    <script>
+        //set构造函数创建的实例中有size属性检测实例中的个数
+        let set1 = new Set();
+        console.log(set1); //0
+        let arr = [9, 2];
+        let set2 = new Set(arr);
+        console.log(set2); //2
+        let str2 = new Set(['k', 'k', 'l', 'l']);
+        console.log(str2.size); //返回的个数是2，证明set函数生成的实例是已经去重的了
+        console.log(str2 instanceof Array); //false,它是对象，不是数组
+        // 把他转为数组使用
+        let arr1 = [...str2];
+        console.log(arr1 instanceof Array); //true,他变成一个数组了
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Con() {
+            this.uage = 19; //第一次查找
+        };
+        Con.prototype.uage = 18; //第二次查找
+        Con.prototype.__proto__.uage = 17; //第三次查找
+        var con1 = new Con();
+        console.log(con1.uage); //先查找构造函数内部;找不到,就找构造函数的原型对象;找不到，就找构造函数的原型对象的对象原型。
+    </script>
+</body>
+
+</html>

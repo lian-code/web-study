@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set实例对象属性</title>
+</head>
+
+<body>
+    <script>
+        // size(),检测实例对象当中包含的元素个数，会去重
+        // add()添加，它是链式，可以拼接多个add
+        // delete()删除，他有返回值，删除成功返回true,不成功返回false
+        // has()检测实例对象中有无此元素，返回一个布尔值
+        // clear()清空数据
+        let set1 = new Set();
+        // 1.size(),检测实例对象当中包含的元素个数，会去重
+        console.log(set1.size); //0
+        // 2.add()添加，它是链式，可以拼接多个add,返回新的实例对象
+        console.log(set1.add('r').add('h')); //{'r','h'}
+        // 3.delete()删除，他有返回值，删除成功返回true,不成功返回false
+        set1.delete('r');
+        console.log(set1); //{'h'}
+        // 4.has()检测实例对象中有无此元素，返回一个布尔值
+        console.log(set1.has('h')); //true
+        console.log(set1.has('j')); //false
+        // 5.clear()清空数据
+        set1.clear();
+        console.log(set1);
+    </script>
+</body>
+
+</html>

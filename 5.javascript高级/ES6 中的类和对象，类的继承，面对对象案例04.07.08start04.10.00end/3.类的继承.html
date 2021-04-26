@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // class Father {
+        //     constructor() {
+
+        //     }
+        //     fn() {
+        //         return 100;
+        //     }
+        // };
+        // // 儿子继承父亲
+        // class Son extends Father {
+
+        // };
+        // // 创建新对象
+        // var son1 = new Son();
+        // // 儿子继承父亲的方法
+        // console.log(son1.fn());
+        class Father {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            fn() {
+                return this.name + this.age;
+            }
+        };
+        // 儿子继承父亲
+        var father = new Father(12, 11);
+        var fatherq = new Father('啊', 11);
+        class Son extends Father {
+
+        };
+        var son1 = new Son("lxx", 20);
+        var son2 = new Son("gcc", 21);
+        // console.log(son1.name);
+        // console.log(son1.age);
+        // console.log(son1.fn());
+        // console.log(son1);
+    </script>
+</body>
+
+</html>

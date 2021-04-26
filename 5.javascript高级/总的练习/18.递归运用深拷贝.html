@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let oldobj = {
+            uname: 'lianhaowei',
+            say: {
+                func: 'dance',
+                funcs: {
+                    funcss: 'dances'
+                }
+            },
+            says: [1, 2, 3, 4],
+        };
+        let newobj = {};
+
+        function deepcopy(newObject, oldObject) {
+            // for循环对象， 按对象中属性值来分复杂数据， 简单数据，分数据来操作
+            for (let keys in oldObject) {
+
+                if (oldObject[keys] instanceof Array) {
+                    newObject[keys] = [];
+                    deepcopy(newObject[keys], oldObject[keys]);
+                } else if (oldObject[keys] instanceof Object) {
+                    newObject[keys] = {};
+                    deepcopy(newObject[keys], oldObject[keys]);
+                } else {
+                    newObject[keys] = oldObject[keys];
+                }
+            }
+        };
+        deepcopy(newobj, oldobj);
+        newobj.say.func = 111;
+        console.log(newobj);
+        console.log(oldobj);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.数组解构
+        let [a, b, c] = [1, 2, 3];
+        console.log(a); //1
+        // 2.1 对象解构之同属性名
+        let {
+            name,
+            age
+        } = {
+            name: 'lian',
+            age: 20
+        };
+        console.log(name); //lian
+        // 2.2 对象解构之自定义属性名
+        let {
+            NAME: UNAME,
+            AGE: UAGE
+        } = {
+            NAME: 'lian',
+            AGE: 20
+        };
+        console.log(UNAME); //lian
+    </script>
+</body>
+
+</html>

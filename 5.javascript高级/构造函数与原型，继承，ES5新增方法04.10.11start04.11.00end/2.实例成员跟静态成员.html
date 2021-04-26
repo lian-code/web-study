@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(name, age) {
+            this.uname = name;
+            this.uage = age;
+            this.sing = function() {
+                console.log('唱歌');
+            }
+        };
+        var hg = new Star('胡歌', 100);
+        //unmae,uage都是实例成员只能通过实例化对象访问
+        console.log(hg.uname);
+        console.log(Star.uname); //undefined
+
+        Star.fn = '方法'; //构造对象本身的属性方法就是静态对象
+        console.log(Star.fn); //静态成员只能通过构造函数访问
+        console.log(hg.fn); //undefined
+    </script>
+</body>
+
+</html>

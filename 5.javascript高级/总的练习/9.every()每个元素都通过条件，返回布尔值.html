@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>every()每个元素都通过条件，即返回true；一个不通过即返回false</title>
+</head>
+
+<body>
+
+    <script>
+        // 1.every()每个元素都通过条件，即返回true；一个不通过即返回false
+        let arr = [9, 2, 3, 4, 5];
+        console.log(arr.every(function(value) {
+            return value == 1; //false
+        }));
+        console.log(arr.every(function(value) {
+            return value > 1; //true
+        }));
+        // 2.若收到的是空数组则无论汝河都返回true
+        let nullarr = [];
+        console.log(nullarr.every(function(value) {
+            return value > 10; //true
+        }));
+        console.log(nullarr.every(function(value) {
+            return value < 10; //true
+        }));
+    </script>
+</body>
+
+</html>

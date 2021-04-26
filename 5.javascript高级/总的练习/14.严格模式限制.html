@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // 1.1正常模式不会为只读属性赋值，但是不会报错
+        // let obj = {};
+        // // 定义属性
+        // Object.defineProperty(obj, 'uname', {
+        //     value: 'lianhaowei',
+        // });
+        // console.log(obj);
+        // obj.uname = '连浩伟'; //更改不了，但是不会报错
+
+        // 1.2严格模式不予许为只读属性赋值，报错
+        function fn1() {
+            "use strict"; //开启严格模式
+            let obj = {};
+            // 定义属性
+            Object.defineProperty(obj, 'uname', {
+                value: 'lianhaowei',
+            });
+            console.log(obj);
+            obj.uname = '连浩伟'; //报错
+        };
+        fn1();
+    </script>
+</body>
+
+</html>

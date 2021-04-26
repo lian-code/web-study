@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>确认</button>
+    <script>
+        // 翻译: 修建
+        // trim()一般用于表单文本框文字去除空白提交
+        var input = document.querySelector('input');
+        var button = document.querySelector('button');
+        button.addEventListener('click', function() {
+            var str = input.value.trim(); //使用前先去掉两侧空白
+            if (str == '') { //这里直接用input.value == ''的话，有bug,输入空格，它会认为空格就是字符串,所以要用trim()方法去掉两侧空白;
+                alert('请输入文字');
+            } else {
+                console.log(str.length);
+                console.log(str);
+            }
+        })
+    </script>
+</body>
+
+</html>

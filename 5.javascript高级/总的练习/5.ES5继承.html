@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Father(name) {
+            this.uname = name;
+        };
+        Father.prototype.say = function() {
+            console.log(1000);
+        };
+
+        function Son(name, age) {
+            Father.call(this, name);
+            this.uage = age;
+        };
+        Son.prototype = new Father();
+        Son.prototype.says = function() {
+            console.log('新的方法');
+        };
+        let son = new Son('连浩伟', 20);
+        console.log(son);
+        son.say(); //1000
+        son.says(); //新的方法
+    </script>
+</body>
+
+</html>

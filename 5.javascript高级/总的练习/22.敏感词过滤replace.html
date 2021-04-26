@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>提交</button>
+    <div></div>
+    <script>
+        // 用字符串的替换str.replace(被替换的字符，替换的字符),字符串替换返回一个新的字符串；
+        // 但是如要不分大小写， 重复替换， 还是得把被替换字符用正则表达式扩起来，
+        let input = document.querySelector('input');
+        let button = document.querySelector('button');
+        let div = document.querySelector('div');
+        button.addEventListener('click', () => {
+            div.innerHTML = input.value.replace(/fuck/gi, '****'); //表达式后加参数g,就是全局匹配，有多少个fuck就替换多少个fuck。
+            // 表达式后加参数i,就是忽略大小写，写大写的FUCK也就替换。
+        });
+    </script>
+</body>
+
+</html>

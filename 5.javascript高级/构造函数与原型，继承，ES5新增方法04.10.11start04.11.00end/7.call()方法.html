@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <script>
+        // call() 1.可以调用函数     2.括号参数第一个可以修改函数的this指向
+        var button = document.querySelector('button');
+        // button.addEventListener('click', function() {
+        //     console.log(this); //输出按钮对象，因为是按钮调用
+        //     console.log('按钮调用');
+        // });
+        // button.onclick = function() {
+        //     console.log(this);
+        //     console.log(11);
+        // };
+        // button.click.call(this); //用call()方法自动调用函数
+        // 按钮点击事件报错，不知道为什么，以后再研究
+        // 先直接测试直接this指向window的函数
+        function fn(x, y) {
+            console.log(this);
+            console.log('fn方法');
+            console.log(x + y);
+        };
+        // fn.call();//用call方法调用函数
+        var thiss = {
+            uname: '连'
+        };
+        fn.call(thiss, 1, 2); //用call()调用方法并修改指向
+        // call(parameter,parameter,parameter,...) call()方法括号中多个参数，除第一个参数是修改this指向外，其他参数都是传递给函数方法的实参
+    </script>
+</body>
+
+</html>

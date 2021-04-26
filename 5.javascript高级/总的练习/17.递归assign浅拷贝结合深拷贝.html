@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.assign分配(target,sources)(目标，来源)</title>
+</head>
+
+<body>
+    <script>
+        // // 1.这是浅拷贝
+        // let obj = {
+        //     uname: 'lianhaowei',
+        //     say: {
+        //         uage: 20,
+        //     },
+        // };
+        // let objcopy = {};
+        // Object.assign(objcopy, obj);
+        // console.log(objcopy);
+        // objcopy.say.uage = 10; //修改了拷贝对象中的复杂数据
+        // objcopy.uname = 'liancopy'; //修改了拷贝对象中的简单数据
+        // console.log(obj); //影响了被拷贝对象的复杂数据，因为他们共用一个地址
+
+
+        // 2. 所以我们需要深拷贝
+        let obj = {
+            uname: 'lianhaowei',
+            say: {
+                uage: 20,
+            },
+        };
+        let objcopy = {};
+
+        // 对象中属性值的获取不是object.property, 而是object[property]。
+
+        function copy(target, sources) {
+            for (let keys in sources) {
+                let propValue = sources[keys];
+                if (propValue instanceof Array) {
+                    target[keys] = [];
+                    copy(target[keys], propValue);
+                } else if (propValue instanceof Object) {
+                    target[keys] = {};
+                    copy(target[keys], propValue);
+                } else {
+                    target[keys] = propValue;
+                }
+            };
+        };
+        copy(objcopy, obj);
+        objcopy.say.uage = 10;
+        console.log(obj);
+        console.log(objcopy);
+    </script>
+</body>
+
+</html>

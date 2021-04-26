@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 父构造函数
+        function Father(name, age) {
+            this.uname = name;
+            this.uage = age;
+        };
+        Father.prototype.sing = function() {
+            console.log('我会唱歌');
+        };
+        var father = new Father('father', 60);
+        console.log(father);
+        // 子构造函数
+        function Child(name, age, sex) {
+            this.usex = sex;
+            // 用call()方法改this指向，直接把数据赋值给子构造函数
+            Father.call(this, name, age); //修改Father()方法this指向，然后传递实参
+        };
+        Child.prototype = new Father(); //新建的父类实例对象，实例对象里边__proto__有sing()方法
+        Child.prototype.dance = function() {
+            console.log('我会跳舞');
+        };
+        // 实例化Child构造函数
+        var child = new Child('浩伟', 20, '男');
+        var child1 = new Child('lian', 22, '女')
+        console.log(child);
+        console.log(child1);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            uname: '连浩伟',
+            uage: 20
+        };
+        Object.defineProperty(obj, 'arr', {
+            value: '周婵利'
+        });
+        // 1.
+        console.log(Object.keys(obj)); //["uname", "uage"],找不到新增的arr属性，因为这个属性的enumerable默认为false
+        // 2.
+        obj.arr = '修改';
+        console.log(obj); //输出的还是原数组。并没有修改对象中的arr属性，因为writable属性默认为false，不可写
+        // 3.
+        delete obj.arr; //删除这个对象新增得arr属性
+        console.log(obj); //会发现里边还是有arr属性，这是因为configurable可配置这个属性值默认为false,不能删除此属性
+    </script>
+</body>
+
+</html>
