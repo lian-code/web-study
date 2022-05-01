@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <!-- {data第二种写法} 为最常用的el,data写法，其它了解即可 -->
+    <div id="root">
+        姓名：{{name}} 年龄：{{age}}
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false //关闭生产提示
+        // el第一种
+        /* const v = new Vue({
+            data: {
+                name: '连浩伟',
+                age:20
+            }
+        })
+        v.$mount('#root') */
+
+    // el第二种常用 / data第一种写法
+    /* new Vue({
+        el: '#root',
+        data: {
+            name: '连浩伟',
+            age:20
+        }
+    }) */
+
+    // data第二种写法
+    new Vue({
+        el: '#root',
+        // 函数式
+        data() {
+            return {
+                name: '连浩伟',
+                age: 20
+            }
+        }
+    })
+</script>
+
+</html>
